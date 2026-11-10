@@ -1,0 +1,38 @@
+[
+  {
+    "id": 201,
+    "titulo": "Escapada de fin de semana",
+    "hotel": "Hotel Maitei Posadas",
+    "descripcion": "Beneficio especial para estadías de dos noches durante fines de semana seleccionados.",
+    "descuento": "20% OFF",
+    "precio": 68000,
+    "precio_anterior": 85000,
+    "fuente": "Booking.com (proveedor de referencia)",
+    "fecha_actualizacion": "2026-09-28T18:00:00",
+    "imagen": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 202,
+    "titulo": "Promo Costanera",
+    "hotel": "Posadas Hotel & Suites",
+    "descripcion": "Tarifa promocional para reservas anticipadas en habitaciones seleccionadas.",
+    "descuento": "15% OFF",
+    "precio": 45900,
+    "precio_anterior": 54000,
+    "fuente": "Booking.com (proveedor de referencia)",
+    "fecha_actualizacion": "2026-09-28T18:05:00",
+    "imagen": "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 203,
+    "titulo": "Estadía urbana",
+    "hotel": "Urbano Posadas Hotel",
+    "descripcion": "Promoción para visitantes que buscan alojarse cerca del microcentro y principales servicios.",
+    "descuento": "Tarifa especial",
+    "precio": 62000,
+    "precio_anterior": 72000,
+    "fuente": "Booking.com (proveedor de referencia)",
+    "fecha_actualizacion": "2026-09-28T18:10:00",
+    "imagen": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=80"
+  }
+]

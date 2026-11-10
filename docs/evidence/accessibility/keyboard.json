@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "check": "mobile_menu_Tab_Space_Escape_focus_return",
+      "passed": true
+    },
+    {
+      "check": "login.html_required_fields_reachable_visible_focus",
+      "fields": 2,
+      "passed": true
+    },
+    {
+      "check": "registro-usuario.html_required_fields_reachable_visible_focus",
+      "fields": 6,
+      "passed": true
+    }
+  ],
+  "writes": 0
+}

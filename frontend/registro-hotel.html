@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registrar Alojamiento - Posadas Turismo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/session.css">
+</head>
+
+<body class="private-page" data-private>
+
+    <header class="header" data-header><a href="index.html" class="logo">PosadasTurismo</a></header>
+
+    <section class="hero hero-compact">
+        <div class="hero-content">
+            <span class="hero-eyebrow">Administración</span>
+            <h1>Registrar alojamiento</h1>
+            <p>
+                Incorporá un nuevo hotel a la plataforma de turismo de Posadas.
+            </p>
+        </div>
+    </section>
+
+    <main class="main-container form-page-container">
+
+        <section class="card-panel form-card">
+
+            <div class="form-card-heading">
+                <div>
+                    <span class="section-kicker">Nuevo registro</span>
+                    <h2>Datos del alojamiento</h2>
+                </div>
+
+                <p>
+                    Completá los campos obligatorios para registrar
+                    el nuevo alojamiento.
+                </p>
+            </div>
+
+            <form id="form-registro-hotel" class="form-grid">
+
+                <div class="form-group">
+                    <label for="nombre-hotel">Nombre del Hotel</label>
+
+                    <input
+                        id="nombre-hotel"
+                        type="text"
+                        placeholder="Ej. Hotel Costanera Posadas"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="precio-base">Precio Base ($)</label>
+
+                    <input
+                        id="precio-base"
+                        type="number"
+                        min="0"
+                        step="1"
+                        placeholder="Ej. 85000"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="zona-id">Zona (código)</label>
+
+                    <input
+                        id="zona-id"
+                        aria-describedby="zona-id-ayuda"
+                        type="number"
+                        min="1"
+                        value="1"
+                        required
+                    >
+                    <small id="zona-id-ayuda" class="workspace-field-help">Código numérico de la zona del alojamiento. Usá el código indicado por la administración.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoría</label>
+
+                    <select id="categoria" required>
+                        <option value="5">5 Estrellas</option>
+                        <option value="4" selected>4 Estrellas</option>
+                        <option value="3">3 Estrellas</option>
+                        <option value="2">2 Estrellas</option>
+                        <option value="1">1 Estrella</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="direccion">Dirección</label>
+
+                    <input
+                        id="direccion"
+                        type="text"
+                        placeholder="Ej. Av. Costanera 1500, Posadas, Misiones"
+                        required
+                    >
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="servicio">Servicios</label>
+
+                    <input
+                        id="servicio"
+                        type="text"
+                        placeholder="Ej. WiFi, Desayuno, Piscina, Estacionamiento"
+                    >
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="descripcion">Descripción</label>
+
+                    <textarea
+                        id="descripcion"
+                        rows="4"
+                        placeholder="Descripción del alojamiento, ubicación y servicios principales..."
+                    ></textarea>
+                </div>
+
+                <div
+                    id="mensaje-registro-hotel"
+                    class="booking-message hidden full-width"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+                <div class="form-actions full-width">
+                    <a href="index.html" class="btn-secondary">
+                        Cancelar
+                    </a>
+
+                    <button
+                        id="btn-guardar-hotel"
+                        type="submit"
+                        class="btn-submit"
+                    >
+                        Guardar alojamiento
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>
+            &copy; 2026 PosadasTurismo
+        </p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>

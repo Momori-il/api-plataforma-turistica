@@ -1,0 +1,203 @@
+{
+  "flows": [
+    {
+      "kind": "hotel",
+      "reservation_id": 2008,
+      "confirmed": true,
+      "cancelled": true,
+      "keyboard_dialog": true
+    },
+    {
+      "kind": "actividad",
+      "reservation_id": 2009,
+      "confirmed": true,
+      "cancelled": true,
+      "keyboard_dialog": true
+    }
+  ],
+  "http_errors": [],
+  "page_errors": [],
+  "accessibility": [
+    {
+      "state": "hotel_checkout",
+      "width": 1440,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_checkout",
+      "width": 1366,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_checkout",
+      "width": 1024,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_checkout",
+      "width": 768,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_checkout",
+      "width": 390,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_confirmation",
+      "width": 1440,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_confirmation",
+      "width": 1366,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_confirmation",
+      "width": 1024,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_confirmation",
+      "width": 768,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_confirmation",
+      "width": 390,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_detail",
+      "width": 1440,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_detail",
+      "width": 1366,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_detail",
+      "width": 1024,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_detail",
+      "width": 768,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "hotel_detail",
+      "width": 390,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_checkout",
+      "width": 1440,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_checkout",
+      "width": 1366,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_checkout",
+      "width": 1024,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_checkout",
+      "width": 768,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_checkout",
+      "width": 390,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_confirmation",
+      "width": 1440,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_confirmation",
+      "width": 1366,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_confirmation",
+      "width": 1024,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_confirmation",
+      "width": 768,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_confirmation",
+      "width": 390,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_detail",
+      "width": 1440,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_detail",
+      "width": 1366,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_detail",
+      "width": 1024,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_detail",
+      "width": 768,
+      "violations": [],
+      "overflow": false
+    },
+    {
+      "state": "actividad_detail",
+      "width": 390,
+      "violations": [],
+      "overflow": false
+    }
+  ],
+  "dom_xss_escaped": true
+}

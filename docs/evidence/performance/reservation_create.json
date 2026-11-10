@@ -1,0 +1,14 @@
+{
+  "requests": 20,
+  "failures": 0,
+  "average_ms": 52.217250000467175,
+  "median_ms": 51,
+  "p95_ms": 84,
+  "p99_ms": 84,
+  "max_ms": 84.12250000037602,
+  "requests_per_second": 7.672149673266755,
+  "response_statuses": {
+    "201": 20
+  },
+  "busy_messages": {}
+}

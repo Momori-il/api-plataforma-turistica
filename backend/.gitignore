@@ -1,0 +1,21 @@
+# Entornos virtuales
+venv/
+env/
+.venv/
+venv_old/
+.pytest_cache/
+*.bak
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Variables de entorno locales
+.env
+.env.*
+!.env.example
+
+# Credenciales, manifiesto y reportes demo de esta PC
+.demo/

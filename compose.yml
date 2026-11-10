@@ -1,0 +1,244 @@
+name: posadasturismo-ae4
+
+x-app: &app
+  image: posadasturismo-ae4:macro3-local
+  build:
+    context: .
+    dockerfile: docker/backend.Dockerfile
+  user: "10001:10001"
+  init: true
+  read_only: true
+  tmpfs: [/tmp]
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  restart: unless-stopped
+  environment: &environment
+    APP_ENV: integration
+    DB_SERVER: sqlserver
+    DB_PORT: "1433"
+    DB_NAME: TurismoPosadas_AE4_Integration
+    DB_DRIVER: ODBC Driver 18 for SQL Server
+    DB_ENCRYPT: "true"
+    DB_TRUST_SERVER_CERTIFICATE: "true"
+    DB_CONNECT_TIMEOUT: "2"
+    DB_QUERY_TIMEOUT: "5"
+    DB_LOCK_TIMEOUT_MS: "2000"
+    DB_POOL_TIMEOUT: "1"
+    REDIS_URL_FILE: /run/secrets/redis_url
+    RABBITMQ_URL_FILE: /run/secrets/rabbitmq_url
+    METRICS_TOKEN_FILE: /run/secrets/metrics_token
+    METRICS_PORT: "9000"
+    AE4_MESSAGING_ENABLED: "true"
+    LOG_JSON: "true"
+    TRACING_ENABLED: "true"
+    CORS_ORIGINS: http://127.0.0.1:5500,http://localhost:5500
+  secrets: &app-secrets [redis_url, rabbitmq_url, metrics_token]
+  networks: [backend, messaging, observability]
+  mem_limit: 192m
+
+x-worker-health: &worker-health
+  test: [CMD, python, -m, scripts.worker_probe]
+  interval: 15s
+  timeout: 12s
+  retries: 3
+  start_period: 90s
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server@sha256:21cba63f9e5f93ae72d211e50bceca8f047a6233da18ed5ecb497152f97eca7b
+    user: mssql
+    entrypoint: [/bin/sh, /ae4/sqlserver-entrypoint.sh]
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_PID: Developer
+      MSSQL_MEMORY_LIMIT_MB: "1536"
+    secrets: [sql_admin_password]
+    volumes:
+      - sql-data:/var/opt/mssql
+      - ./docker/sqlserver-entrypoint.sh:/ae4/sqlserver-entrypoint.sh:ro
+    networks: [backend]
+    mem_limit: 2300m
+    restart: unless-stopped
+    healthcheck:
+      test: [CMD-SHELL, 'SQLCMDPASSWORD=$$(cat /run/secrets/sql_admin_password) /opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -b -Q "SELECT 1" -o /dev/null']
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 90s
+
+  sql-init:
+    <<: *app
+    restart: "no"
+    command: [python, -m, scripts.init_container_sql]
+    environment:
+      <<: *environment
+      SERVICE_NAME: sql-init
+      REDIS_URL_FILE: ""
+      RABBITMQ_URL_FILE: ""
+      METRICS_TOKEN_FILE: ""
+      DB_USER: sa
+      DB_PASSWORD_FILE: /run/secrets/sql_admin_password
+    secrets: [sql_admin_password, sql_core_password, sql_read_password, sql_relay_password, sql_audit_password, sql_notifications_password]
+    networks: [backend]
+    healthcheck: {disable: true}
+    depends_on: {sqlserver: {condition: service_healthy}}
+
+  redis:
+    image: redis@sha256:71885d8cc6e42f2bc0aa2eb853bfc4be200b5108a46ac50e117ae1df0531fb80
+    user: redis
+    entrypoint: [/bin/sh, /ae4/redis-entrypoint.sh]
+    secrets: [redis_password]
+    volumes: [./docker/redis-entrypoint.sh:/ae4/redis-entrypoint.sh:ro]
+    tmpfs: [/tmp]
+    read_only: true
+    cap_drop: [ALL]
+    networks: [backend]
+    mem_limit: 192m
+    restart: unless-stopped
+    healthcheck:
+      test: [CMD-SHELL, 'REDISCLI_AUTH=$$(cat /run/secrets/redis_password) redis-cli ping | grep -q PONG']
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  rabbitmq:
+    image: rabbitmq@sha256:8425b8435b0203e87292cf1a4a7e5f8108c610bbd8217f8cc952f43628b24987
+    user: rabbitmq
+    entrypoint: [/bin/sh, /ae4/rabbitmq-entrypoint.sh]
+    environment:
+      RABBITMQ_DEFAULT_USER: ae4
+      RABBITMQ_DEFAULT_VHOST: ae4
+      RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS: +S 2:2
+    secrets: [rabbitmq_password]
+    volumes:
+      - rabbit-data:/var/lib/rabbitmq
+      - ./docker/rabbitmq-entrypoint.sh:/ae4/rabbitmq-entrypoint.sh:ro
+    networks: [messaging]
+    mem_limit: 384m
+    restart: unless-stopped
+    healthcheck:
+      test: [CMD, rabbitmq-diagnostics, -q, ping]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 45s
+
+  core-api:
+    <<: *app
+    environment:
+      <<: *environment
+      SERVICE_NAME: core-api
+      DB_USER: ae4_core
+      DB_PASSWORD_FILE: /run/secrets/sql_core_password
+      JWT_SECRET_KEY_FILE: /run/secrets/jwt_secret
+      AVAILABILITY_URL: http://availability-api:8000
+    secrets: [redis_url, rabbitmq_url, metrics_token, sql_core_password, jwt_secret]
+    ports: ["127.0.0.1:8000:8000"]
+    networks: [public, backend, messaging, observability]
+    mem_limit: 256m
+    depends_on:
+      sql-init: {condition: service_completed_successfully}
+      availability-api: {condition: service_started}
+
+  availability-api:
+    <<: *app
+    command: [python, -m, uvicorn, availability_app:app, --host, 0.0.0.0, --port, "8000", --no-access-log]
+    environment:
+      <<: *environment
+      SERVICE_NAME: availability-api
+      RABBITMQ_URL_FILE: ""
+      DB_USER: ae4_read
+      DB_PASSWORD_FILE: /run/secrets/sql_read_password
+    secrets: [redis_url, metrics_token, sql_read_password]
+    networks: [backend, observability]
+    depends_on: {sql-init: {condition: service_completed_successfully}}
+
+  outbox-relay:
+    <<: *app
+    command: [python, -m, messaging.relay]
+    environment:
+      <<: *environment
+      SERVICE_NAME: outbox-relay
+      DB_USER: ae4_relay
+      DB_PASSWORD_FILE: /run/secrets/sql_relay_password
+    secrets: [redis_url, rabbitmq_url, metrics_token, sql_relay_password]
+    healthcheck: *worker-health
+    depends_on:
+      sql-init: {condition: service_completed_successfully}
+      rabbitmq: {condition: service_healthy}
+
+  audit-worker:
+    <<: *app
+    command: [python, -m, messaging.worker, audit]
+    environment:
+      <<: *environment
+      SERVICE_NAME: audit-worker
+      DB_USER: ae4_audit
+      DB_PASSWORD_FILE: /run/secrets/sql_audit_password
+    secrets: [redis_url, rabbitmq_url, metrics_token, sql_audit_password]
+    healthcheck: *worker-health
+    depends_on:
+      sql-init: {condition: service_completed_successfully}
+      rabbitmq: {condition: service_healthy}
+
+  notifications-worker:
+    <<: *app
+    command: [python, -m, messaging.worker, notifications]
+    environment:
+      <<: *environment
+      SERVICE_NAME: notifications-worker
+      DB_USER: ae4_notifications
+      DB_PASSWORD_FILE: /run/secrets/sql_notifications_password
+    secrets: [redis_url, rabbitmq_url, metrics_token, sql_notifications_password]
+    healthcheck: *worker-health
+    depends_on:
+      sql-init: {condition: service_completed_successfully}
+      rabbitmq: {condition: service_healthy}
+
+  availability-worker:
+    <<: *app
+    command: [python, -m, messaging.worker, availability]
+    environment:
+      <<: *environment
+      SERVICE_NAME: availability-worker
+      DB_USER: ae4_read
+      DB_PASSWORD_FILE: /run/secrets/sql_read_password
+    secrets: [redis_url, rabbitmq_url, metrics_token, sql_read_password]
+    healthcheck: *worker-health
+    depends_on:
+      sql-init: {condition: service_completed_successfully}
+      rabbitmq: {condition: service_healthy}
+
+  frontend:
+    build: {context: ., dockerfile: docker/frontend.Dockerfile}
+    image: posadasturismo-frontend:macro3-local
+    ports: ["127.0.0.1:5500:8080"]
+    networks: [public]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 64m
+    restart: unless-stopped
+
+networks:
+  public: {}
+  backend: {internal: true}
+  messaging: {internal: true}
+  observability: {internal: true}
+volumes:
+  sql-data: {}
+  rabbit-data: {}
+secrets:
+  jwt_secret: {file: ./backend/.demo/ae4-docker/jwt_secret}
+  metrics_token: {file: ./backend/.demo/ae4-docker/metrics_token}
+  redis_password: {file: ./backend/.demo/ae4-docker/redis_password}
+  redis_url: {file: ./backend/.demo/ae4-docker/redis_url}
+  rabbitmq_password: {file: ./backend/.demo/ae4-docker/rabbitmq_password}
+  rabbitmq_url: {file: ./backend/.demo/ae4-docker/rabbitmq_url}
+  sql_admin_password: {file: ./backend/.demo/ae4-docker/sql_admin_password}
+  sql_core_password: {file: ./backend/.demo/ae4-docker/sql_core_password}
+  sql_read_password: {file: ./backend/.demo/ae4-docker/sql_read_password}
+  sql_relay_password: {file: ./backend/.demo/ae4-docker/sql_relay_password}
+  sql_audit_password: {file: ./backend/.demo/ae4-docker/sql_audit_password}
+  sql_notifications_password: {file: ./backend/.demo/ae4-docker/sql_notifications_password}

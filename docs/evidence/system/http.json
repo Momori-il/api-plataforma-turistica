@@ -1,0 +1,304 @@
+{
+  "checks": [
+    {
+      "name": "login_ADMIN",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "me_ADMIN",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "login_PRESTADOR",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "me_PRESTADOR",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "login_TURISTA",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "me_TURISTA",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "public_/api/v1/hoteles/",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "public_/api/v1/actividades/",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "PRESTADOR_/api/v1/hoteles/gestion",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "PRESTADOR_/api/v1/actividades/gestion",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "PRESTADOR_/api/v1/gestion/reservas",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "PRESTADOR_/api/v1/hoteles/4007/habitaciones/gestion",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "PRESTADOR_/api/v1/actividades/1002/turnos/gestion",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "ADMIN_/api/v1/hoteles/gestion",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "ADMIN_/api/v1/actividades/gestion",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "ADMIN_/api/v1/gestion/reservas",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "ADMIN_/api/v1/hoteles/4007/habitaciones/gestion",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "ADMIN_/api/v1/actividades/1002/turnos/gestion",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "admin_users",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "hotel_create",
+      "status": 201,
+      "passed": true
+    },
+    {
+      "name": "hotel_pay",
+      "status": 201,
+      "passed": true
+    },
+    {
+      "name": "hotel_received_PRESTADOR",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "hotel_received_ADMIN",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "hotel_admin_payments",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "hotel_confirmation",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "hotel_cancel",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "actividad_create",
+      "status": 201,
+      "passed": true
+    },
+    {
+      "name": "actividad_pay",
+      "status": 201,
+      "passed": true
+    },
+    {
+      "name": "actividad_received_PRESTADOR",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "actividad_received_ADMIN",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "actividad_admin_payments",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "actividad_confirmation",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "actividad_cancel",
+      "status": 200,
+      "passed": true
+    }
+  ],
+  "concurrency": [
+    {
+      "name": "last_hotel",
+      "statuses": [
+        201,
+        409
+      ],
+      "passed": true
+    },
+    {
+      "name": "last_actividad",
+      "statuses": [
+        201,
+        409
+      ],
+      "passed": true
+    },
+    {
+      "name": "same_idempotency_key",
+      "statuses": [
+        201,
+        201
+      ],
+      "unique_reservations": 1,
+      "passed": true
+    },
+    {
+      "name": "duplicate_payment",
+      "statuses": [
+        200,
+        201
+      ],
+      "approved_payments": 1,
+      "passed": true
+    },
+    {
+      "name": "cancel_vs_payment",
+      "statuses": [
+        201,
+        200
+      ],
+      "final_state": "CANCELADA",
+      "passed": true
+    }
+  ],
+  "security": [
+    {
+      "name": "different_payload_same_key",
+      "status": 409,
+      "passed": true
+    },
+    {
+      "name": "jwt_missing",
+      "status": 401,
+      "passed": true
+    },
+    {
+      "name": "jwt_invalid",
+      "status": 401,
+      "passed": true
+    },
+    {
+      "name": "jwt_expired",
+      "status": 401,
+      "passed": true
+    },
+    {
+      "name": "wrong_role",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "name": "IDOR_other_tourist",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "name": "BOLA_other_provider",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "name": "extra_fields",
+      "status": 400,
+      "passed": true
+    },
+    {
+      "name": "sql_injection_email",
+      "status": 400,
+      "passed": true
+    },
+    {
+      "name": "oversized_body",
+      "status": 413,
+      "passed": true
+    },
+    {
+      "name": "json_not_html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "name": "real_redis_rate_limit",
+      "statuses": [
+        400,
+        400,
+        400,
+        400,
+        400,
+        429
+      ],
+      "passed": true
+    }
+  ],
+  "integrity": {
+    "reservations": 9,
+    "payments": 7,
+    "states": [
+      "CONFIRMADA",
+      "CANCELADA",
+      "CANCELADA",
+      "CANCELADA",
+      "CANCELADA",
+      "PENDIENTE_PAGO",
+      "PENDIENTE_PAGO",
+      "CONFIRMADA",
+      "CANCELADA"
+    ],
+    "pending_events": 0,
+    "pending_effects": 0,
+    "approved": 7,
+    "dbcc_violations": 0,
+    "foreign_reservation_id": 8,
+    "foreign_hotel_id": 1002
+  }
+}

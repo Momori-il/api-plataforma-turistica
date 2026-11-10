@@ -1,0 +1,27 @@
+{
+  "contrast": [
+    {
+      "selector": ".discover-inner .section-kicker",
+      "before_ratio": 4.39,
+      "required": 4.5,
+      "change": "use existing --primary-dark"
+    },
+    {
+      "selector": ".booking-card-top span",
+      "before_ratio": 4.42,
+      "required": 4.5,
+      "change": "use existing --primary-dark"
+    }
+  ],
+  "responsive": {
+    "problem": "Long valid hotel name overflowed heading at 768/390px",
+    "before_document_widths": {
+      "768": 893,
+      "390": 540
+    },
+    "change": "min-width:0 on heading flex children; overflow-wrap:anywhere on h1",
+    "final_overflows": 0
+  },
+  "final_axe_violations": 0,
+  "scope": "25 pages at desktop; 125 viewport checks; 30 real checkout/confirmation/detail states across five widths; not complete manual WCAG certification"
+}

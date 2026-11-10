@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión - PosadasTurismo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/session.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="login-body auth-page auth-definitiva">
+    <header class="header" data-header><a href="index.html" class="logo">PosadasTurismo</a></header>
+
+    <main class="auth-surface" aria-labelledby="auth-title">
+        <div class="auth-heading"><h1 id="auth-title">Iniciar sesión</h1></div>
+        <form id="form-login-page" method="post" class="auth-form" data-state="normal" data-message="auth-message-login" novalidate>
+            <div class="auth-field">
+                <label for="login-email">Email</label>
+                <input id="login-email" name="email" type="email" placeholder="nombre@correo.com" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" aria-describedby="login-email-error" required>
+                <p id="login-email-error" class="auth-field-error"></p>
+            </div>
+            <div class="auth-field">
+                <label for="login-password">Contraseña</label>
+                <div class="auth-password">
+                    <input id="login-password" name="password" type="password" autocomplete="current-password" aria-describedby="login-password-error" required>
+                    <button type="button" data-toggle-password="login-password" aria-label="Mostrar contraseña" aria-pressed="false" aria-controls="login-password">Mostrar</button>
+                </div>
+                <p id="login-password-error" class="auth-field-error"></p>
+            </div>
+            <button type="submit" class="auth-submit" disabled>Iniciar sesión</button>
+        </form>
+        <div id="auth-message-login" class="auth-feedback" aria-live="polite" tabindex="-1" hidden><strong data-message-title></strong><p data-message-text></p></div>
+        <a href="recuperar-password.html" id="link-recuperar-password" class="auth-recovery-link">¿Olvidaste tu contraseña?</a>
+        <p class="auth-switch">¿No tenés cuenta? <a href="registro-usuario.html" id="link-crear-cuenta">Registrate</a></p>
+        <a href="index.html" class="auth-back">Volver al inicio</a>
+        <details class="auth-demo" id="auth-demo-panel" hidden>
+            <summary>Demostración</summary>
+            <fieldset id="demo-access" class="demo-access">
+                <legend>Accesos por rol</legend>
+                <div class="demo-roles">
+                    <button type="button" data-demo-role="TURISTA">Turista</button>
+                    <button type="button" data-demo-role="PRESTADOR">Prestador</button>
+                    <button type="button" data-demo-role="ADMIN">Administrador</button>
+                </div>
+            </fieldset>
+            <label for="auth-demo-scenario">Respuesta del login</label>
+            <select id="auth-demo-scenario">
+                <option value="">Normal</option>
+                <option value="INVALID_PASSWORD">Contraseña incorrecta</option>
+                <option value="USER_NOT_FOUND">Usuario inexistente</option>
+                <option value="ACCOUNT_INACTIVE">Cuenta inactiva</option>
+                <option value="SERVER_ERROR">Error del servidor</option>
+            </select>
+            <p class="auth-mock-note">Datos de demostración. No uses contraseñas reales.</p>
+        </details>
+    </main>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

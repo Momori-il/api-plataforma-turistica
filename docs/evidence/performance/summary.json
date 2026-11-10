@@ -1,0 +1,278 @@
+{
+  "tool": "Locust 2.47.0",
+  "host": "127.0.0.1:8000",
+  "think_time_ms": [
+    50,
+    100
+  ],
+  "warmup_seconds": 30,
+  "measured_window_seconds": 180,
+  "scenarios": [
+    {
+      "name": "availability_miss",
+      "scenario": "availability_miss",
+      "users": 10,
+      "seconds": 180,
+      "exit_code": 0,
+      "requests": 12785,
+      "failures": 0,
+      "average_ms": 60.4697382479461,
+      "median_ms": 44.0,
+      "p95_ms": 180.0,
+      "p99_ms": 240.0,
+      "max_ms": 391.6851999983919,
+      "requests_per_second": 71.38833754760859,
+      "error_rate": 0.0,
+      "success_rate": 1.0,
+      "cache_counter_delta": {
+        "cache_hits_total": 0.0,
+        "cache_misses_total": 12818.0,
+        "cache_fallback_total": 0.0
+      },
+      "measurement_source": "Locust periodic CSV snapshot; in-flight/end-of-window requests may not be included"
+    },
+    {
+      "name": "availability_hit",
+      "scenario": "availability_hit",
+      "users": 10,
+      "seconds": 180,
+      "exit_code": 0,
+      "requests": 15753,
+      "failures": 0,
+      "average_ms": 34.1056582428899,
+      "median_ms": 25.0,
+      "p95_ms": 96.0,
+      "p99_ms": 180.0,
+      "max_ms": 319.76120000035735,
+      "requests_per_second": 88.00471214854834,
+      "error_rate": 0.0,
+      "success_rate": 1.0,
+      "cache_counter_delta": {
+        "cache_hits_total": 15757.0,
+        "cache_misses_total": 46.0,
+        "cache_fallback_total": 0.0
+      },
+      "measurement_source": "Locust periodic CSV snapshot; in-flight/end-of-window requests may not be included"
+    },
+    {
+      "name": "availability_fallback",
+      "scenario": "availability_fallback",
+      "users": 10,
+      "seconds": 60,
+      "exit_code": 0,
+      "requests": 4486,
+      "failures": 0,
+      "average_ms": 52.93937242532112,
+      "median_ms": 37.0,
+      "p95_ms": 170.0,
+      "p99_ms": 230.0,
+      "max_ms": 355.3975000013452,
+      "requests_per_second": 75.56105017256502,
+      "error_rate": 0.0,
+      "success_rate": 1.0,
+      "cache_counter_delta": {
+        "cache_hits_total": 0.0,
+        "cache_misses_total": 0.0,
+        "cache_fallback_total": 4489.0
+      },
+      "measurement_source": "Locust periodic CSV snapshot; in-flight/end-of-window requests may not be included"
+    },
+    {
+      "name": "hotels",
+      "scenario": "hotels",
+      "users": 10,
+      "seconds": 60,
+      "exit_code": 0,
+      "requests": 5754,
+      "failures": 0,
+      "average_ms": 23.83313677442339,
+      "median_ms": 14.0,
+      "p95_ms": 92.0,
+      "p99_ms": 180.0,
+      "max_ms": 337.06050000000687,
+      "requests_per_second": 97.01958086981851,
+      "error_rate": 0.0,
+      "success_rate": 1.0,
+      "cache_counter_delta": {
+        "cache_hits_total": 0.0,
+        "cache_misses_total": 0.0,
+        "cache_fallback_total": 0.0
+      },
+      "measurement_source": "Locust periodic CSV snapshot; in-flight/end-of-window requests may not be included"
+    },
+    {
+      "name": "login",
+      "scenario": "login",
+      "users": 2,
+      "seconds": 60,
+      "exit_code": 0,
+      "requests": 689,
+      "failures": 0,
+      "average_ms": 90.26623265608036,
+      "median_ms": 88.0,
+      "p95_ms": 120.0,
+      "p99_ms": 130.0,
+      "max_ms": 266.1227000007784,
+      "requests_per_second": 11.612249445226993,
+      "error_rate": 0.0,
+      "success_rate": 1.0,
+      "cache_counter_delta": {
+        "cache_hits_total": 0.0,
+        "cache_misses_total": 0.0,
+        "cache_fallback_total": 0.0
+      },
+      "measurement_source": "Locust periodic CSV snapshot; in-flight/end-of-window requests may not be included"
+    },
+    {
+      "name": "reservation",
+      "scenario": "reservation",
+      "users": 5,
+      "seconds": 30,
+      "exit_code": 1,
+      "requests": 1234,
+      "failures": 2,
+      "average_ms": 37.64917244733207,
+      "median_ms": 25.0,
+      "p95_ms": 95.0,
+      "p99_ms": 130.0,
+      "max_ms": 188.1145999996079,
+      "requests_per_second": 42.36105816676821,
+      "error_rate": 0.0016207455429497568,
+      "success_rate": 0.9983792544570502,
+      "cache_counter_delta": {
+        "cache_hits_total": 0.0,
+        "cache_misses_total": 0.0,
+        "cache_fallback_total": 0.0
+      },
+      "measurement_source": "Locust periodic CSV snapshot; in-flight/end-of-window requests may not be included"
+    },
+    {
+      "name": "payment",
+      "scenario": "payment",
+      "users": 5,
+      "seconds": 30,
+      "exit_code": 0,
+      "requests": 1234,
+      "failures": 0,
+      "average_ms": 37.87139084277654,
+      "median_ms": 34.0,
+      "p95_ms": 69.0,
+      "p99_ms": 100.0,
+      "max_ms": 154.9895000007382,
+      "requests_per_second": 42.281301375359796,
+      "error_rate": 0.0,
+      "success_rate": 1.0,
+      "cache_counter_delta": {
+        "cache_hits_total": 0.0,
+        "cache_misses_total": 0.0,
+        "cache_fallback_total": 0.0
+      },
+      "measurement_source": "Locust periodic CSV snapshot; in-flight/end-of-window requests may not be included"
+    },
+    {
+      "name": "stress_25",
+      "scenario": "availability_stress",
+      "users": 25,
+      "seconds": 30,
+      "exit_code": 0,
+      "requests": 3566,
+      "failures": 0,
+      "average_ms": 126.32718171620103,
+      "median_ms": 99.0,
+      "p95_ms": 300.0,
+      "p99_ms": 390.0,
+      "max_ms": 504.70689999929164,
+      "requests_per_second": 122.34593500441555,
+      "error_rate": 0.0,
+      "success_rate": 1.0,
+      "cache_counter_delta": {
+        "cache_hits_total": 3624.0,
+        "cache_misses_total": 17.0,
+        "cache_fallback_total": 0.0
+      },
+      "measurement_source": "Locust periodic CSV snapshot; in-flight/end-of-window requests may not be included"
+    },
+    {
+      "name": "stress_50",
+      "scenario": "availability_stress",
+      "users": 50,
+      "seconds": 30,
+      "exit_code": 0,
+      "requests": 3691,
+      "failures": 0,
+      "average_ms": 314.16737875915663,
+      "median_ms": 290.0,
+      "p95_ms": 530.0,
+      "p99_ms": 670.0,
+      "max_ms": 816.1169000013615,
+      "requests_per_second": 126.72576504336254,
+      "error_rate": 0.0,
+      "success_rate": 1.0,
+      "cache_counter_delta": {
+        "cache_hits_total": 3035.0,
+        "cache_misses_total": 25.0,
+        "cache_fallback_total": 0.0
+      },
+      "measurement_source": "Locust periodic CSV snapshot; in-flight/end-of-window requests may not be included"
+    },
+    {
+      "name": "stress_75",
+      "scenario": "availability_stress",
+      "users": 75,
+      "seconds": 30,
+      "exit_code": 1,
+      "requests": 3834,
+      "failures": 32,
+      "average_ms": 486.3936193010062,
+      "median_ms": 460.0,
+      "p95_ms": 800.0,
+      "p99_ms": 1300.0,
+      "max_ms": 1488.1901000007929,
+      "requests_per_second": 131.6784832659388,
+      "error_rate": 0.008346374543557642,
+      "success_rate": 0.9916536254564423,
+      "cache_counter_delta": {
+        "cache_hits_total": 0.0,
+        "cache_misses_total": 0.0,
+        "cache_fallback_total": 0.0
+      },
+      "measurement_source": "Locust periodic CSV snapshot; in-flight/end-of-window requests may not be included"
+    },
+    {
+      "requests": 20,
+      "failures": 0,
+      "average_ms": 52.217250000467175,
+      "median_ms": 51,
+      "p95_ms": 84,
+      "p99_ms": 84,
+      "max_ms": 84.12250000037602,
+      "requests_per_second": 7.672149673266755,
+      "response_statuses": {
+        "201": 20
+      },
+      "busy_messages": {},
+      "name": "reservation_create",
+      "scenario": "fresh hotel reservations",
+      "users": 1,
+      "created_rows": 20,
+      "exit_code": 0,
+      "error_rate": 0.0,
+      "success_rate": 1.0,
+      "measurement_source": "Locust periodic CSV snapshot; in-flight/end-of-window requests may not be included"
+    }
+  ],
+  "scope": "SQL Docker integration only; login/payment quotas raised only during load; rate limiter remains enabled",
+  "restore_completed": true,
+  "comparison": {
+    "mean_reduction_percent": 43.59879961271649,
+    "p95_reduction_percent": 46.666666666666664,
+    "throughput_increase_percent": 23.27603523454844
+  },
+  "interpretation": {
+    "reservation_replay_503": "2/1234 HTTP 503 under concurrent same-resource retries; retained as observed backpressure, not hidden or converted to 2xx",
+    "stress_75_503": "32/3834 HTTP 503 at 75 VUs; saturation boundary, not a zero-error operating point",
+    "raw_csv": "Original timed profiles use the final periodic CSV snapshot (~one reporting interval before shutdown). Locust histogram percentiles are bucketed. New bounded-creation profile uses the final shutdown JSON (20 completed requests).",
+    "capacity": "10 VUs: zero failures; 25 VUs: zero failures/P95 300ms; 50 VUs: zero failures/P95 530ms; 75 VUs: 0.835% HTTP503/P95 800ms. Host-specific, closed-loop load with 50–100ms think time.",
+    "limits": "One local execution per timed profile, no confidence intervals, cache eligibility still reads SQL, no query profiler or production capacity claim."
+  }
+}

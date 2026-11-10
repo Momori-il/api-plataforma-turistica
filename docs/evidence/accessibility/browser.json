@@ -1,0 +1,1269 @@
+{
+  "engine": "Chromium/Playwright",
+  "axe_version": "4.14.0",
+  "wcag": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa"
+  ],
+  "scans": [
+    {
+      "role": "PUBLIC",
+      "page": "index.html",
+      "violations": [],
+      "passes": 26,
+      "incomplete": 1
+    },
+    {
+      "role": "PUBLIC",
+      "page": "hotel.html?id=4007",
+      "violations": [],
+      "passes": 25,
+      "incomplete": 1
+    },
+    {
+      "role": "PUBLIC",
+      "page": "actividades.html",
+      "violations": [],
+      "passes": 17,
+      "incomplete": 1
+    },
+    {
+      "role": "PUBLIC",
+      "page": "actividad.html?id=1002",
+      "violations": [],
+      "passes": 25,
+      "incomplete": 0
+    },
+    {
+      "role": "PUBLIC",
+      "page": "ofertas.html",
+      "violations": [],
+      "passes": 14,
+      "incomplete": 1
+    },
+    {
+      "role": "PUBLIC",
+      "page": "login.html",
+      "violations": [],
+      "passes": 21,
+      "incomplete": 0
+    },
+    {
+      "role": "PUBLIC",
+      "page": "registro-usuario.html",
+      "violations": [],
+      "passes": 21,
+      "incomplete": 0
+    },
+    {
+      "role": "PUBLIC",
+      "page": "recuperar-password.html",
+      "violations": [],
+      "passes": 14,
+      "incomplete": 0
+    },
+    {
+      "role": "TURISTA",
+      "page": "perfil.html",
+      "violations": [],
+      "passes": 19,
+      "incomplete": 0
+    },
+    {
+      "role": "TURISTA",
+      "page": "mis-reservas.html",
+      "violations": [],
+      "passes": 24,
+      "incomplete": 0
+    },
+    {
+      "role": "TURISTA",
+      "page": "checkout.html",
+      "violations": [],
+      "passes": 21,
+      "incomplete": 0
+    },
+    {
+      "role": "TURISTA",
+      "page": "confirmacion.html",
+      "violations": [],
+      "passes": 21,
+      "incomplete": 0
+    },
+    {
+      "role": "TURISTA",
+      "page": "reserva-detalle.html",
+      "violations": [],
+      "passes": 17,
+      "incomplete": 0
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador.html",
+      "violations": [],
+      "passes": 24,
+      "incomplete": 0
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-hoteles.html",
+      "violations": [],
+      "passes": 23,
+      "incomplete": 0
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-habitaciones.html?hotelId=4007",
+      "violations": [],
+      "passes": 26,
+      "incomplete": 0
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-actividades.html",
+      "violations": [],
+      "passes": 25,
+      "incomplete": 0
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-turnos.html?actividadId=1002",
+      "violations": [],
+      "passes": 25,
+      "incomplete": 0
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-reservas.html",
+      "violations": [],
+      "passes": 22,
+      "incomplete": 0
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "registro-hotel.html",
+      "violations": [],
+      "passes": 21,
+      "incomplete": 1
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin.html",
+      "violations": [],
+      "passes": 24,
+      "incomplete": 0
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-usuarios.html",
+      "violations": [],
+      "passes": 26,
+      "incomplete": 0
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-hoteles.html",
+      "violations": [],
+      "passes": 27,
+      "incomplete": 0
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-actividades.html",
+      "violations": [],
+      "passes": 26,
+      "incomplete": 0
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-reservas.html",
+      "violations": [],
+      "passes": 28,
+      "incomplete": 0
+    }
+  ],
+  "responsive": [
+    {
+      "role": "PUBLIC",
+      "page": "index.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PUBLIC",
+      "page": "index.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PUBLIC",
+      "page": "index.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PUBLIC",
+      "page": "index.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PUBLIC",
+      "page": "index.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PUBLIC",
+      "page": "hotel.html?id=4007",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PUBLIC",
+      "page": "hotel.html?id=4007",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PUBLIC",
+      "page": "hotel.html?id=4007",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PUBLIC",
+      "page": "hotel.html?id=4007",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PUBLIC",
+      "page": "hotel.html?id=4007",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PUBLIC",
+      "page": "actividades.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PUBLIC",
+      "page": "actividades.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PUBLIC",
+      "page": "actividades.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PUBLIC",
+      "page": "actividades.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PUBLIC",
+      "page": "actividades.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PUBLIC",
+      "page": "actividad.html?id=1002",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PUBLIC",
+      "page": "actividad.html?id=1002",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PUBLIC",
+      "page": "actividad.html?id=1002",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PUBLIC",
+      "page": "actividad.html?id=1002",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PUBLIC",
+      "page": "actividad.html?id=1002",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PUBLIC",
+      "page": "ofertas.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PUBLIC",
+      "page": "ofertas.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PUBLIC",
+      "page": "ofertas.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PUBLIC",
+      "page": "ofertas.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PUBLIC",
+      "page": "ofertas.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PUBLIC",
+      "page": "login.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PUBLIC",
+      "page": "login.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PUBLIC",
+      "page": "login.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PUBLIC",
+      "page": "login.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PUBLIC",
+      "page": "login.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PUBLIC",
+      "page": "registro-usuario.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PUBLIC",
+      "page": "registro-usuario.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PUBLIC",
+      "page": "registro-usuario.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PUBLIC",
+      "page": "registro-usuario.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PUBLIC",
+      "page": "registro-usuario.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PUBLIC",
+      "page": "recuperar-password.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PUBLIC",
+      "page": "recuperar-password.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PUBLIC",
+      "page": "recuperar-password.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PUBLIC",
+      "page": "recuperar-password.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PUBLIC",
+      "page": "recuperar-password.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "TURISTA",
+      "page": "perfil.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "TURISTA",
+      "page": "perfil.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "TURISTA",
+      "page": "perfil.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "TURISTA",
+      "page": "perfil.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "TURISTA",
+      "page": "perfil.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "TURISTA",
+      "page": "mis-reservas.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "TURISTA",
+      "page": "mis-reservas.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "TURISTA",
+      "page": "mis-reservas.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "TURISTA",
+      "page": "mis-reservas.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "TURISTA",
+      "page": "mis-reservas.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "TURISTA",
+      "page": "checkout.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "TURISTA",
+      "page": "checkout.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "TURISTA",
+      "page": "checkout.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "TURISTA",
+      "page": "checkout.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "TURISTA",
+      "page": "checkout.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "TURISTA",
+      "page": "confirmacion.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "TURISTA",
+      "page": "confirmacion.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "TURISTA",
+      "page": "confirmacion.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "TURISTA",
+      "page": "confirmacion.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "TURISTA",
+      "page": "confirmacion.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "TURISTA",
+      "page": "reserva-detalle.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "TURISTA",
+      "page": "reserva-detalle.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "TURISTA",
+      "page": "reserva-detalle.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "TURISTA",
+      "page": "reserva-detalle.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "TURISTA",
+      "page": "reserva-detalle.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-hoteles.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-hoteles.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-hoteles.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-hoteles.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-hoteles.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-habitaciones.html?hotelId=4007",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-habitaciones.html?hotelId=4007",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-habitaciones.html?hotelId=4007",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-habitaciones.html?hotelId=4007",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-habitaciones.html?hotelId=4007",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-actividades.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-actividades.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-actividades.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-actividades.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-actividades.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-turnos.html?actividadId=1002",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-turnos.html?actividadId=1002",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-turnos.html?actividadId=1002",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-turnos.html?actividadId=1002",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-turnos.html?actividadId=1002",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-reservas.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-reservas.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-reservas.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-reservas.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "prestador-reservas.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "registro-hotel.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "registro-hotel.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "registro-hotel.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "registro-hotel.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "PRESTADOR",
+      "page": "registro-hotel.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-usuarios.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-usuarios.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-usuarios.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-usuarios.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-usuarios.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-hoteles.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-hoteles.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-hoteles.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-hoteles.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-hoteles.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-actividades.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-actividades.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-actividades.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-actividades.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-actividades.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-reservas.html",
+      "width": 1440,
+      "overflow": false,
+      "document_width": 1440
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-reservas.html",
+      "width": 1366,
+      "overflow": false,
+      "document_width": 1366
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-reservas.html",
+      "width": 1024,
+      "overflow": false,
+      "document_width": 1024
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-reservas.html",
+      "width": 768,
+      "overflow": false,
+      "document_width": 768
+    },
+    {
+      "role": "ADMIN",
+      "page": "admin-reservas.html",
+      "width": 390,
+      "overflow": false,
+      "document_width": 390
+    }
+  ],
+  "keyboard": [
+    {
+      "page": "index.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "hotel.html?id=4007",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "actividades.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "actividad.html?id=1002",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "ofertas.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "login.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "registro-usuario.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "recuperar-password.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "perfil.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "mis-reservas.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "checkout.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "confirmacion.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "reserva-detalle.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "prestador.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "prestador-hoteles.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "prestador-habitaciones.html?hotelId=4007",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "prestador-actividades.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "prestador-turnos.html?actividadId=1002",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "prestador-reservas.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "registro-hotel.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "admin.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "admin-usuarios.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "admin-hoteles.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "admin-actividades.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    },
+    {
+      "page": "admin-reservas.html",
+      "tag": "A",
+      "visible": true,
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": "none"
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "browser_version": "158.0.8127.18"
+}

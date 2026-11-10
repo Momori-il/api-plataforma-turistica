@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "nombre": "Juan",
+    "apellido": "González",
+    "email": "turista@demo.test",
+    "rol": "TURISTA",
+    "passwordHash": "d3ad9315b7be5dd53b31a273b3b3aba5defe700808305aa16a3062b76658a791"
+  },
+  {
+    "id": 2,
+    "nombre": "Paula",
+    "apellido": "Benítez",
+    "email": "prestador@demo.test",
+    "rol": "PRESTADOR",
+    "passwordHash": "d3ad9315b7be5dd53b31a273b3b3aba5defe700808305aa16a3062b76658a791"
+  },
+  {
+    "id": 3,
+    "nombre": "Administrador",
+    "apellido": "Demo",
+    "email": "admin@demo.test",
+    "rol": "ADMIN",
+    "passwordHash": "d3ad9315b7be5dd53b31a273b3b3aba5defe700808305aa16a3062b76658a791"
+  },
+  {
+    "id": 4,
+    "nombre": "Diego",
+    "apellido": "Ríos",
+    "email": "prestador2@demo.test",
+    "rol": "PRESTADOR",
+    "passwordHash": "d3ad9315b7be5dd53b31a273b3b3aba5defe700808305aa16a3062b76658a791"
+  }
+]

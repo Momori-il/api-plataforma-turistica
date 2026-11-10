@@ -1,0 +1,252 @@
+{
+  "checks": [
+    {
+      "name": "roles_login_me",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "provider_create_admin_approve",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "sql_idempotency_hotel",
+      "result": "passed",
+      "details": {
+        "same_id": 1,
+        "conflict": 409
+      }
+    },
+    {
+      "name": "sql_idempotency_actividad",
+      "result": "passed",
+      "details": {
+        "same_id": 2,
+        "conflict": 409
+      }
+    },
+    {
+      "name": "last_unit_hotel",
+      "result": "passed",
+      "details": {
+        "statuses": [
+          409,
+          201
+        ],
+        "created": 1
+      }
+    },
+    {
+      "name": "last_unit_actividad",
+      "result": "passed",
+      "details": {
+        "statuses": [
+          409,
+          201
+        ],
+        "created": 1
+      }
+    },
+    {
+      "name": "sql_only_last_unit_hotel",
+      "result": "passed",
+      "details": {
+        "statuses": [
+          201,
+          409
+        ]
+      }
+    },
+    {
+      "name": "sql_only_last_unit_actividad",
+      "result": "passed",
+      "details": {
+        "statuses": [
+          201,
+          409
+        ]
+      }
+    },
+    {
+      "name": "concurrent_idempotency",
+      "result": "passed",
+      "details": {
+        "created": 1
+      }
+    },
+    {
+      "name": "concurrent_payment_and_cancellation_history",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "concurrent_payment_vs_cancellation",
+      "result": "passed",
+      "details": {
+        "statuses": [
+          409,
+          200
+        ]
+      }
+    },
+    {
+      "name": "public_and_manager_http_regression",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "real_redis_miss_hit",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "real_redis_ttl",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "real_redis_invalidation",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "real_redis_lock_lease_and_owner",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "redis_connection_failure_sql_fallback",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "real_outbox_broker_failure_recovery_confirms",
+      "result": "passed",
+      "details": {
+        "published": 27
+      }
+    },
+    {
+      "name": "real_inbox_duplicate_consumers_correlation",
+      "result": "passed",
+      "details": {
+        "audit": 27,
+        "notifications": 10
+      }
+    },
+    {
+      "name": "real_durable_cache_invalidation_consumer",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "real_retry_backoff_dlq",
+      "result": "passed",
+      "details": {
+        "attempts": 4
+      }
+    },
+    {
+      "name": "real_readiness",
+      "result": "passed",
+      "details": {
+        "database": "ok",
+        "redis": "ok",
+        "rabbitmq": "ok",
+        "status": "ready"
+      }
+    },
+    {
+      "name": "demo_preserved_exactly",
+      "result": "passed",
+      "details": null
+    }
+  ],
+  "blocked": [],
+  "demo_before": {
+    "usuarios": {
+      "count": 6,
+      "sha256": "4e007713f1a4635ba51ca49fb624b61f8b2c5ce28be27ba4bf30ce98eb635e00"
+    },
+    "hoteles": {
+      "count": 4,
+      "sha256": "13c9aa20b6e9073281d508c94f6411fdf452c8308072c7362f35bc91440cbe2b"
+    },
+    "habitaciones": {
+      "count": 9,
+      "sha256": "c0a61db3062ae5d69ca2c4973b114d10bdeac8ab98230a17c18711706735fd4a"
+    },
+    "actividades": {
+      "count": 3,
+      "sha256": "348b46044273269f85de75e31c4d6a43d18a7848c5219c9a104e93261577bc96"
+    },
+    "actividad_turnos": {
+      "count": 8,
+      "sha256": "09e742851e5f14a9869b42259ce6004961a5dddbb90d68ea206f30f3358caa13"
+    },
+    "reservas": {
+      "count": 52,
+      "sha256": "30e588c2fb59058ac85a95bf3a9ad03dc6609587d165a019317a80e83d8854d5"
+    },
+    "pagos": {
+      "count": 10,
+      "sha256": "6a70ac98d8037ac8e93ff03f0fb36c4ec5df4b3ff2edbfc90e985fd262145723"
+    },
+    "viajes": {
+      "count": 2,
+      "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+    },
+    "viaje_hoteles": {
+      "count": 3,
+      "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+    },
+    "eventos_procesados": {
+      "count": 3,
+      "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+    }
+  },
+  "demo_after": {
+    "usuarios": {
+      "count": 6,
+      "sha256": "4e007713f1a4635ba51ca49fb624b61f8b2c5ce28be27ba4bf30ce98eb635e00"
+    },
+    "hoteles": {
+      "count": 4,
+      "sha256": "13c9aa20b6e9073281d508c94f6411fdf452c8308072c7362f35bc91440cbe2b"
+    },
+    "habitaciones": {
+      "count": 9,
+      "sha256": "c0a61db3062ae5d69ca2c4973b114d10bdeac8ab98230a17c18711706735fd4a"
+    },
+    "actividades": {
+      "count": 3,
+      "sha256": "348b46044273269f85de75e31c4d6a43d18a7848c5219c9a104e93261577bc96"
+    },
+    "actividad_turnos": {
+      "count": 8,
+      "sha256": "09e742851e5f14a9869b42259ce6004961a5dddbb90d68ea206f30f3358caa13"
+    },
+    "reservas": {
+      "count": 52,
+      "sha256": "30e588c2fb59058ac85a95bf3a9ad03dc6609587d165a019317a80e83d8854d5"
+    },
+    "pagos": {
+      "count": 10,
+      "sha256": "6a70ac98d8037ac8e93ff03f0fb36c4ec5df4b3ff2edbfc90e985fd262145723"
+    },
+    "viajes": {
+      "count": 2,
+      "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+    },
+    "viaje_hoteles": {
+      "count": 3,
+      "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+    },
+    "eventos_procesados": {
+      "count": 3,
+      "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+    }
+  },
+  "dbcc_violations": 0
+}

@@ -1,0 +1,31 @@
+Adjunto un ZIP con el frontend final de AE2 y mi backend FastAPI actualizado. Necesito implementar A05: Redis/cache y expiracion SOLO en el backend, respetando el contrato del frontend.
+
+Antes de modificar nada, revisa todo el backend adjunto y adapta la solucion a su arquitectura real. No inventes rutas, nombres de clases ni archivos si ya existen equivalentes.
+
+Requisitos:
+1. Usar Redis como cache, NO como persistencia principal. SQL Server sigue siendo la fuente persistente.
+2. Patron Cache Aside para GET /api/v1/hoteles/ y GET /api/v1/hoteles/{id}.
+3. Preparar la misma estrategia para GET /api/v1/actividades/ cuando exista.
+4. Usar redis.asyncio y conexion centralizada.
+5. Configurar Redis desde .env (host, puerto, DB y TTL).
+6. Redis debe ser opcional: si esta caido, la API debe seguir consultando SQL Server y responder normalmente.
+7. Claves sugeridas: hoteles:list:v1, hotel:{id}:v1 y actividades:list:v1.
+8. Invalidar cache al crear, modificar o eliminar hoteles.
+9. Para precios externos dependientes de fechas/huespedes, usar claves que incluyan hotel, checkin, checkout, adultos y habitaciones.
+10. No cachear errores 4xx/5xx ni datos sensibles.
+11. Agregar logs claros de CACHE HIT, MISS, SET, INVALIDATE y ERROR/BYPASS.
+12. Si es posible, devolver headers X-Cache, X-Cache-TTL, X-Data-Source y X-Last-Updated. El frontend ya esta preparado para leerlos.
+13. Si CORS esta activo, exponer esos headers para que JavaScript pueda leerlos.
+14. No modificar innecesariamente el JSON que ya consumen GET /api/v1/hoteles/ y GET /api/v1/hoteles/{id}.
+
+Necesito que me entregues:
+- diagnostico de la estructura actual;
+- archivos nuevos/modificados;
+- requirements actualizado;
+- variables .env;
+- codigo completo;
+- paso a paso para levantar Redis;
+- pruebas de MISS, HIT, TTL, invalidacion y Redis caido;
+- confirmacion de que SQL Server sigue siendo la persistencia principal.
+
+Usa tambien como referencia el archivo CONTRATO_INTEGRACION_BACKEND.txt incluido en el ZIP del frontend.

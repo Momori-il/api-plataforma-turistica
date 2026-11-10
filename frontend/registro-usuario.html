@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cuenta - PosadasTurismo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/session.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="login-body auth-page auth-definitiva">
+    <header class="header" data-header><a href="index.html" class="logo">PosadasTurismo</a></header>
+
+    <main class="auth-surface auth-surface-register" aria-labelledby="auth-title">
+        <div class="auth-heading"><h1 id="auth-title">Crear cuenta</h1></div>
+        <form id="form-registro-usuario" method="post" class="auth-form auth-register-grid" data-state="normal" data-message="auth-message-register" novalidate>
+            <div class="auth-field">
+                <label for="registro-nombre">Nombre</label>
+                <input id="registro-nombre" name="nombre" type="text" autocomplete="given-name" maxlength="80" aria-describedby="registro-nombre-error" required>
+                <p id="registro-nombre-error" class="auth-field-error"></p>
+            </div>
+            <div class="auth-field">
+                <label for="registro-apellido">Apellido</label>
+                <input id="registro-apellido" name="apellido" type="text" autocomplete="family-name" maxlength="80" aria-describedby="registro-apellido-error" required>
+                <p id="registro-apellido-error" class="auth-field-error"></p>
+            </div>
+            <div class="auth-field">
+                <label for="registro-email">Email</label>
+                <input id="registro-email" name="email" type="email" placeholder="nombre@correo.com" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" aria-describedby="registro-email-error" required>
+                <p id="registro-email-error" class="auth-field-error"></p>
+            </div>
+            <div class="auth-field">
+                <label for="registro-telefono">Teléfono</label>
+                <input id="registro-telefono" name="telefono" type="tel" placeholder="+54 376 1234567" autocomplete="tel" inputmode="tel" maxlength="30" aria-describedby="registro-telefono-error" required>
+                <p id="registro-telefono-error" class="auth-field-error"></p>
+            </div>
+            <div class="auth-field">
+                <label for="registro-password">Contraseña</label>
+                <div class="auth-password">
+                    <input id="registro-password" name="password" type="password" autocomplete="new-password" minlength="12" aria-describedby="registro-password-help registro-password-error" required>
+                    <button type="button" data-toggle-password="registro-password" aria-label="Mostrar contraseña" aria-pressed="false" aria-controls="registro-password">Mostrar</button>
+                </div>
+                <p id="registro-password-help" class="auth-field-help">Mínimo 12 caracteres.</p>
+                <p id="registro-password-error" class="auth-field-error"></p>
+            </div>
+            <div class="auth-field">
+                <label for="registro-password-confirm">Repetir contraseña</label>
+                <div class="auth-password">
+                    <input id="registro-password-confirm" name="confirmacion" type="password" autocomplete="new-password" minlength="12" aria-describedby="registro-password-confirm-error" required>
+                    <button type="button" data-toggle-password="registro-password-confirm" aria-label="Mostrar contraseña repetida" aria-pressed="false" aria-controls="registro-password-confirm">Mostrar</button>
+                </div>
+                <p id="registro-password-confirm-error" class="auth-field-error"></p>
+            </div>
+            <button type="submit" class="auth-submit auth-wide" disabled>Crear cuenta</button>
+        </form>
+        <div id="auth-message-register" class="auth-feedback" aria-live="polite" tabindex="-1" hidden><strong data-message-title></strong><p data-message-text></p></div>
+        <section id="auth-success" class="auth-result" aria-labelledby="auth-success-title" tabindex="-1" hidden>
+            <p class="auth-success-label">Registro exitoso</p>
+            <h2 id="auth-success-title">Tu cuenta está creada</h2>
+            <p id="auth-success-text">Ya podés continuar con tu estadía.</p>
+            <a id="auth-continue" class="auth-continue" href="index.html">Continuar</a>
+        </section>
+        <p id="auth-register-switch" class="auth-switch">¿Ya tenés cuenta? <a href="login.html" id="link-ir-login">Iniciá sesión</a></p>
+        <p class="auth-mock-note" data-mock-only hidden>Cuenta local de demostración. No uses contraseñas reales.</p>
+        <a href="index.html" class="auth-back">Volver al inicio</a>
+    </main>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

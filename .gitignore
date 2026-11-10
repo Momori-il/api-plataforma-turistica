@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.demo/
+.git_backup_local/
+*.bak
+*.log
+node_modules/
+.DS_Store
+Thumbs.db

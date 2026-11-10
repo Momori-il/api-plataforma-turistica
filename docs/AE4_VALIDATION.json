@@ -1,0 +1,1573 @@
+{
+  "migration_002": {
+    "before": {
+      "usuarios": {
+        "count": 3,
+        "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+      },
+      "hoteles": {
+        "count": 3,
+        "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+      },
+      "habitaciones": {
+        "count": 7,
+        "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+      },
+      "actividades": {
+        "count": 2,
+        "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+      },
+      "actividad_turnos": {
+        "count": 6,
+        "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+      },
+      "reservas": {
+        "count": 3,
+        "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+      },
+      "pagos": {
+        "count": 3,
+        "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+      },
+      "viajes": {
+        "count": 2,
+        "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+      },
+      "viaje_hoteles": {
+        "count": 3,
+        "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+      },
+      "eventos_procesados": {
+        "count": 3,
+        "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+      }
+    },
+    "after": {
+      "usuarios": {
+        "count": 3,
+        "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+      },
+      "hoteles": {
+        "count": 3,
+        "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+      },
+      "habitaciones": {
+        "count": 7,
+        "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+      },
+      "actividades": {
+        "count": 2,
+        "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+      },
+      "actividad_turnos": {
+        "count": 6,
+        "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+      },
+      "reservas": {
+        "count": 3,
+        "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+      },
+      "pagos": {
+        "count": 3,
+        "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+      },
+      "viajes": {
+        "count": 2,
+        "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+      },
+      "viaje_hoteles": {
+        "count": 3,
+        "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+      },
+      "eventos_procesados": {
+        "count": 3,
+        "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+      }
+    },
+    "versions": [
+      "001_mvp_schema",
+      "002_reservation_idempotency"
+    ],
+    "dbcc_violations": 0
+  },
+  "migration_003": {
+    "before": {
+      "usuarios": {
+        "count": 3,
+        "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+      },
+      "hoteles": {
+        "count": 3,
+        "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+      },
+      "habitaciones": {
+        "count": 7,
+        "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+      },
+      "actividades": {
+        "count": 2,
+        "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+      },
+      "actividad_turnos": {
+        "count": 6,
+        "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+      },
+      "reservas": {
+        "count": 3,
+        "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+      },
+      "pagos": {
+        "count": 3,
+        "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+      },
+      "viajes": {
+        "count": 2,
+        "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+      },
+      "viaje_hoteles": {
+        "count": 3,
+        "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+      },
+      "eventos_procesados": {
+        "count": 3,
+        "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+      }
+    },
+    "after": {
+      "usuarios": {
+        "count": 3,
+        "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+      },
+      "hoteles": {
+        "count": 3,
+        "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+      },
+      "habitaciones": {
+        "count": 7,
+        "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+      },
+      "actividades": {
+        "count": 2,
+        "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+      },
+      "actividad_turnos": {
+        "count": 6,
+        "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+      },
+      "reservas": {
+        "count": 3,
+        "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+      },
+      "pagos": {
+        "count": 3,
+        "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+      },
+      "viajes": {
+        "count": 2,
+        "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+      },
+      "viaje_hoteles": {
+        "count": 3,
+        "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+      },
+      "eventos_procesados": {
+        "count": 3,
+        "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+      }
+    },
+    "dbcc_violations": 0
+  },
+  "integration": {
+    "checks": [
+      {
+        "name": "roles_login_me",
+        "result": "passed",
+        "details": null
+      },
+      {
+        "name": "provider_create_admin_approve",
+        "result": "passed",
+        "details": null
+      },
+      {
+        "name": "sql_idempotency_hotel",
+        "result": "passed",
+        "details": {
+          "same_id": 1,
+          "conflict": 409
+        }
+      },
+      {
+        "name": "sql_idempotency_actividad",
+        "result": "passed",
+        "details": {
+          "same_id": 2,
+          "conflict": 409
+        }
+      },
+      {
+        "name": "last_unit_hotel",
+        "result": "passed",
+        "details": {
+          "statuses": [
+            201,
+            409
+          ],
+          "created": 1
+        }
+      },
+      {
+        "name": "last_unit_actividad",
+        "result": "passed",
+        "details": {
+          "statuses": [
+            409,
+            201
+          ],
+          "created": 1
+        }
+      },
+      {
+        "name": "sql_only_last_unit_hotel",
+        "result": "passed",
+        "details": {
+          "statuses": [
+            409,
+            201
+          ]
+        }
+      },
+      {
+        "name": "sql_only_last_unit_actividad",
+        "result": "passed",
+        "details": {
+          "statuses": [
+            409,
+            201
+          ]
+        }
+      },
+      {
+        "name": "concurrent_idempotency",
+        "result": "passed",
+        "details": {
+          "created": 1
+        }
+      },
+      {
+        "name": "concurrent_payment_and_cancellation_history",
+        "result": "passed",
+        "details": null
+      },
+      {
+        "name": "concurrent_payment_vs_cancellation",
+        "result": "passed",
+        "details": {
+          "statuses": [
+            409,
+            200
+          ]
+        }
+      },
+      {
+        "name": "public_and_manager_http_regression",
+        "result": "passed",
+        "details": null
+      },
+      {
+        "name": "real_redis_miss_hit",
+        "result": "passed",
+        "details": null
+      },
+      {
+        "name": "real_redis_ttl",
+        "result": "passed",
+        "details": null
+      },
+      {
+        "name": "real_redis_invalidation",
+        "result": "passed",
+        "details": null
+      },
+      {
+        "name": "real_redis_lock_lease_and_owner",
+        "result": "passed",
+        "details": null
+      },
+      {
+        "name": "redis_connection_failure_sql_fallback",
+        "result": "passed",
+        "details": null
+      },
+      {
+        "name": "real_outbox_broker_failure_recovery_confirms",
+        "result": "passed",
+        "details": {
+          "published": 27
+        }
+      },
+      {
+        "name": "real_inbox_duplicate_consumers_correlation",
+        "result": "passed",
+        "details": {
+          "audit": 27,
+          "notifications": 10
+        }
+      },
+      {
+        "name": "real_durable_cache_invalidation_consumer",
+        "result": "passed",
+        "details": null
+      },
+      {
+        "name": "real_retry_backoff_dlq",
+        "result": "passed",
+        "details": {
+          "attempts": 4
+        }
+      },
+      {
+        "name": "real_readiness",
+        "result": "passed",
+        "details": {
+          "database": "ok",
+          "redis": "ok",
+          "rabbitmq": "ok",
+          "status": "ready"
+        }
+      },
+      {
+        "name": "demo_preserved_exactly",
+        "result": "passed",
+        "details": null
+      }
+    ],
+    "blocked": [],
+    "demo_before": {
+      "usuarios": {
+        "count": 3,
+        "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+      },
+      "hoteles": {
+        "count": 3,
+        "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+      },
+      "habitaciones": {
+        "count": 7,
+        "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+      },
+      "actividades": {
+        "count": 2,
+        "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+      },
+      "actividad_turnos": {
+        "count": 6,
+        "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+      },
+      "reservas": {
+        "count": 3,
+        "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+      },
+      "pagos": {
+        "count": 3,
+        "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+      },
+      "viajes": {
+        "count": 2,
+        "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+      },
+      "viaje_hoteles": {
+        "count": 3,
+        "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+      },
+      "eventos_procesados": {
+        "count": 3,
+        "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+      }
+    },
+    "demo_after": {
+      "usuarios": {
+        "count": 3,
+        "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+      },
+      "hoteles": {
+        "count": 3,
+        "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+      },
+      "habitaciones": {
+        "count": 7,
+        "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+      },
+      "actividades": {
+        "count": 2,
+        "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+      },
+      "actividad_turnos": {
+        "count": 6,
+        "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+      },
+      "reservas": {
+        "count": 3,
+        "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+      },
+      "pagos": {
+        "count": 3,
+        "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+      },
+      "viajes": {
+        "count": 2,
+        "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+      },
+      "viaje_hoteles": {
+        "count": 3,
+        "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+      },
+      "eventos_procesados": {
+        "count": 3,
+        "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+      }
+    },
+    "dbcc_violations": 0
+  },
+  "isolated_tests": {
+    "passed": 598,
+    "failed": 0,
+    "skipped": 15,
+    "seconds": 21.9,
+    "real_sql_connections": "blocked by autouse fixture",
+    "warning": "Existing Starlette/httpx TestClient deprecation"
+  },
+  "ae4_selected_tests": {
+    "passed": 15,
+    "failed": 0,
+    "skipped": 0,
+    "included_in_isolated_total": true,
+    "ready_sql_down_http": 503
+  },
+  "live_http": {
+    "health": 200,
+    "ready": {
+      "http": 200,
+      "status": "ready",
+      "database": "ok",
+      "redis": "ok",
+      "rabbitmq": "ok"
+    },
+    "hotels": 200,
+    "activities": 200,
+    "openapi": 200,
+    "paths": 51,
+    "operations": 61
+  },
+  "local_runtime": {
+    "redis_compatible_server": "Memurai Developer 4.1.2, Windows service, loopback 6379",
+    "rabbitmq": "Windows service active",
+    "processes": [
+      "api",
+      "outbox relay",
+      "audit",
+      "notifications",
+      "availability invalidation"
+    ],
+    "secrets_in_report": false
+  },
+  "files_this_continuation": {
+    "modified": [
+      "backend/.env",
+      "backend/.env.example",
+      "backend/config.py",
+      "backend/main.py",
+      "backend/requirements.txt",
+      "docs/AE4_ARCHITECTURE.md",
+      "docs/AE4_CONTEXT.md",
+      "docs/AE4_EVENTS.md",
+      "docs/AE4_IMPLEMENTATION_PLAN.md",
+      "backend/messaging/rabbitmq.py",
+      "backend/models/__init__.py",
+      "backend/routes/hotel_routes.py",
+      "backend/scripts/migrate.py",
+      "backend/services/habitacion_service.py",
+      "backend/services/reserva_service.py",
+      "backend/tests/conftest.py"
+    ],
+    "created": [
+      "backend/database/migrations/003_messaging_outbox_inbox.sql",
+      "backend/messaging/correlation.py",
+      "backend/messaging/relay.py",
+      "backend/messaging/transactional.py",
+      "backend/messaging/worker.py",
+      "backend/models/messaging.py",
+      "backend/scripts/ae4_preservation.py",
+      "backend/scripts/validate_ae4.py",
+      "backend/services/readiness.py",
+      "backend/services/redis_support.py",
+      "backend/tests/test_ae4_distribution.py",
+      "docs/AE4_VALIDATION.json"
+    ],
+    "frontend_changed": [],
+    "previous_idempotency_files_retained": [
+      "backend/database/migrations/002_reservation_idempotency.sql",
+      "backend/models/request_idempotency.py",
+      "backend/routes/reserva_routes.py",
+      "backend/tests/test_reserva_idempotency.py"
+    ]
+  },
+  "frontend_preservation": {
+    "changed": 0,
+    "created": 0,
+    "deleted": 0,
+    "method": "SHA256 comparison against pre-implementation snapshot"
+  },
+  "macro3": {
+    "date": "2026-11-10",
+    "status": "COMPLETED",
+    "docker_desktop_installed": true,
+    "wsl_modern_runtime_validated": true,
+    "remote_docker_used": false,
+    "frontend_changed": false,
+    "previous_macro2_evidence_preserved": true,
+    "isolated_demo_copy": {
+      "source_preserved": true,
+      "source_snapshot": {
+        "usuarios": {
+          "count": 3,
+          "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+        },
+        "hoteles": {
+          "count": 3,
+          "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+        },
+        "habitaciones": {
+          "count": 7,
+          "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+        },
+        "actividades": {
+          "count": 2,
+          "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+        },
+        "actividad_turnos": {
+          "count": 6,
+          "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+        },
+        "reservas": {
+          "count": 3,
+          "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+        },
+        "pagos": {
+          "count": 3,
+          "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+        },
+        "viajes": {
+          "count": 2,
+          "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+        },
+        "viaje_hoteles": {
+          "count": 3,
+          "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+        },
+        "eventos_procesados": {
+          "count": 3,
+          "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+        }
+      },
+      "target": {
+        "status": "already_copied",
+        "snapshot": {
+          "usuarios": {
+            "count": 3,
+            "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+          },
+          "hoteles": {
+            "count": 3,
+            "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+          },
+          "habitaciones": {
+            "count": 7,
+            "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+          },
+          "actividades": {
+            "count": 2,
+            "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+          },
+          "actividad_turnos": {
+            "count": 6,
+            "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+          },
+          "reservas": {
+            "count": 3,
+            "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+          },
+          "pagos": {
+            "count": 3,
+            "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+          },
+          "viajes": {
+            "count": 2,
+            "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+          },
+          "viaje_hoteles": {
+            "count": 3,
+            "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+          },
+          "eventos_procesados": {
+            "count": 3,
+            "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+          }
+        }
+      },
+      "dbcc_violations": 0
+    },
+    "real_tests": {
+      "checks": [
+        {
+          "name": "compose_ten_services_healthy",
+          "result": "passed",
+          "details": {
+            "services": [
+              "audit-worker",
+              "availability-api",
+              "availability-worker",
+              "core-api",
+              "frontend",
+              "notifications-worker",
+              "outbox-relay",
+              "rabbitmq",
+              "redis",
+              "sqlserver"
+            ]
+          }
+        },
+        {
+          "name": "private_metrics_and_probes",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "sql_readonly_permissions",
+          "result": "passed",
+          "details": {
+            "write_denied": true,
+            "password_hash_read_denied": true
+          }
+        },
+        {
+          "name": "three_roles_http_regression",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "linux_odbc_public_availability",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "availability_down_retry_open_bypass_sql",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "availability_half_open_closed_recovery",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "real_redis_down_sql_fallback_recovery",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "broker_down_domain_commit_outbox_pending",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "broker_recovery_confirmed_delivery",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "hotel_reservation_payment_replay_cancel",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "consumer_down_queue_retained_recovery",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "activity_payment_and_idempotent_effects",
+          "result": "passed",
+          "details": {
+            "events": 8,
+            "notifications": 4
+          }
+        },
+        {
+          "name": "real_cross_process_json_trace_chain",
+          "result": "passed",
+          "details": {
+            "trace_id": "a59c8eb3340c17d3dd13e570bddeeec5",
+            "span_count": 7
+          }
+        },
+        {
+          "name": "sql_dependency_down_liveness_and_unhealthy",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "container_restart_dependency_recovery",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "temporary_bookings_cleaned",
+          "result": "passed",
+          "details": {
+            "reservations": 2,
+            "payments": 2
+          }
+        },
+        {
+          "name": "native_demo_preserved_exactly",
+          "result": "passed",
+          "details": null
+        }
+      ],
+      "blocked": [],
+      "native_before": {
+        "usuarios": {
+          "count": 3,
+          "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+        },
+        "hoteles": {
+          "count": 3,
+          "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+        },
+        "habitaciones": {
+          "count": 7,
+          "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+        },
+        "actividades": {
+          "count": 2,
+          "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+        },
+        "actividad_turnos": {
+          "count": 6,
+          "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+        },
+        "reservas": {
+          "count": 3,
+          "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+        },
+        "pagos": {
+          "count": 3,
+          "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+        },
+        "viajes": {
+          "count": 2,
+          "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+        },
+        "viaje_hoteles": {
+          "count": 3,
+          "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+        },
+        "eventos_procesados": {
+          "count": 3,
+          "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+        }
+      },
+      "isolated_after": {
+        "usuarios": {
+          "count": 3,
+          "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+        },
+        "hoteles": {
+          "count": 3,
+          "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+        },
+        "habitaciones": {
+          "count": 7,
+          "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+        },
+        "actividades": {
+          "count": 2,
+          "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+        },
+        "actividad_turnos": {
+          "count": 6,
+          "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+        },
+        "reservas": {
+          "count": 3,
+          "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+        },
+        "pagos": {
+          "count": 3,
+          "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+        },
+        "viajes": {
+          "count": 2,
+          "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+        },
+        "viaje_hoteles": {
+          "count": 3,
+          "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+        },
+        "eventos_procesados": {
+          "count": 3,
+          "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+        }
+      },
+      "native_after": {
+        "usuarios": {
+          "count": 3,
+          "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+        },
+        "hoteles": {
+          "count": 3,
+          "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+        },
+        "habitaciones": {
+          "count": 7,
+          "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+        },
+        "actividades": {
+          "count": 2,
+          "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+        },
+        "actividad_turnos": {
+          "count": 6,
+          "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+        },
+        "reservas": {
+          "count": 3,
+          "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+        },
+        "pagos": {
+          "count": 3,
+          "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+        },
+        "viajes": {
+          "count": 2,
+          "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+        },
+        "viaje_hoteles": {
+          "count": 3,
+          "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+        },
+        "eventos_procesados": {
+          "count": 3,
+          "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+        }
+      },
+      "dbcc_violations": 0
+    },
+    "real_rate_limit": {
+      "passed": true,
+      "first_10": 400,
+      "request_11": 429,
+      "retry_after_present": true,
+      "redis_atomic_script": true,
+      "domain_writes": 0,
+      "note": "Login quota expires automatically; no credentials used"
+    },
+    "reboot_performed_this_turn": false,
+    "user_confirmed_previous_reboot": true,
+    "software": {
+      "wsl": "3.0.5.0",
+      "wsl_default": 2,
+      "docker_desktop": "4.99.0",
+      "docker_engine": "29.9.3",
+      "compose": "5.7.0",
+      "context": "desktop-linux",
+      "container_os": "linux",
+      "python": "3.12.16",
+      "odbc": "18.7.1.1-1"
+    },
+    "final_runtime": {
+      "healthy_services": [
+        "audit-worker",
+        "availability-api",
+        "availability-worker",
+        "core-api",
+        "frontend",
+        "notifications-worker",
+        "outbox-relay",
+        "rabbitmq",
+        "redis",
+        "sqlserver"
+      ],
+      "published_loopback_ports": {
+        "core-api": 8000,
+        "frontend": 5500
+      },
+      "ready": {
+        "database": "ok",
+        "redis": "ok",
+        "rabbitmq": "ok",
+        "status": "ready"
+      },
+      "http_checks": {
+        "/health": 200,
+        "/ready": 200,
+        "/api/v1/hoteles/": 200,
+        "/api/v1/actividades/": 200,
+        "/frontend/index.html": 200,
+        "/frontend/app.js": 200,
+        "/frontend/styles.css": 200,
+        "/frontend/js/config.js": 200
+      },
+      "backend_env_not_served": true
+    },
+    "windows_tests": {
+      "passed": 639,
+      "failed": 0,
+      "skipped": 15,
+      "seconds": 50.31
+    },
+    "linux_tests": {
+      "passed": 639,
+      "failed": 0,
+      "skipped": 15,
+      "seconds": 28.43
+    },
+    "macro3_focused_cases": 41,
+    "sql_linux_selected_tests": {
+      "passed": 38,
+      "failed": 0,
+      "skipped": 0,
+      "sql_cases": 19,
+      "sqlite_cases": 19,
+      "temporary_database_only": true,
+      "groups": [
+        "RBAC/BOLA/JWT 26 passed",
+        "registration/login/roles/active status 12 passed"
+      ]
+    },
+    "native_env_changed": false,
+    "native_schema_changed": false,
+    "migrations": {
+      "new_migrations": 0,
+      "existing_001_002_003_applied_only_in_isolated_compose_database": true
+    },
+    "image_checks": {
+      "non_root_uid": 10001,
+      "no_env_backup_demo_venv_git_tests_in_runtime_image": true,
+      "base_images_pinned_by_digest": true,
+      "pip_check": "passed"
+    },
+    "static_frontend_paths": {
+      "html_js_case_sensitive_references": 373,
+      "css_references": 2,
+      "missing": 0
+    },
+    "local_secrets": {
+      "directory": "backend/.demo/ae4-docker",
+      "values_printed": false,
+      "excluded_from_build_and_git": true
+    },
+    "limitations": [
+      "Existing Starlette/httpx TestClient deprecation warning",
+      "28 historical frontend test failures unchanged; no frontend tests rewritten",
+      "Local integration HTTP/self-signed SQL cert trust is not production deployment",
+      "No HA, Grafana, remote tracing collector, CI/CD, registry or cloud deployment",
+      "Macro 4 not started"
+    ],
+    "files": {
+      "modified": [
+        "backend/.env.example",
+        "backend/.gitignore",
+        "backend/config.py",
+        "backend/main.py",
+        "backend/README.md",
+        "backend/requirements.txt",
+        "backend/database/connection.py",
+        "backend/messaging/rabbitmq.py",
+        "backend/messaging/relay.py",
+        "backend/messaging/transactional.py",
+        "backend/messaging/worker.py",
+        "backend/routes/actividad_routes.py",
+        "backend/routes/habitacion_routes.py",
+        "backend/services/pago_service.py",
+        "backend/services/readiness.py",
+        "backend/services/redis_support.py",
+        "backend/services/reserva_service.py",
+        "backend/tests/conftest.py",
+        "docs/AE4_ARCHITECTURE.md",
+        "docs/AE4_CONTEXT.md",
+        "docs/AE4_EVENTS.md",
+        "docs/AE4_IMPLEMENTATION_PLAN.md",
+        "docs/AE4_VALIDATION.json"
+      ],
+      "created": [
+        ".dockerignore",
+        "compose.yml",
+        "backend/availability_app.py",
+        "backend/observability.py",
+        "backend/messaging/runtime.py",
+        "backend/scripts/container_checks.py",
+        "backend/scripts/copy_demo_to_docker.py",
+        "backend/scripts/import_container_demo.py",
+        "backend/scripts/prepare_ae4_docker.py",
+        "backend/scripts/validate_macro3.py",
+        "backend/scripts/worker_probe.py",
+        "backend/services/availability_gateway.py",
+        "backend/services/http_controls.py",
+        "backend/tests/test_macro3_controls.py",
+        "docker/backend.Dockerfile",
+        "docker/frontend.Dockerfile",
+        "docker/init_sql.py",
+        "docker/nginx.conf",
+        "docker/rabbitmq-entrypoint.sh",
+        "docker/redis-entrypoint.sh",
+        "docker/sqlserver-entrypoint.sh",
+        "docs/AE4_OBSERVABILITY.md",
+        "docs/AE4_SECURITY.md"
+      ],
+      "deleted": []
+    },
+    "file_totals": {
+      "modified": 23,
+      "created": 23,
+      "deleted": 0
+    },
+    "frontend_preservation": {
+      "modified": [],
+      "created": [],
+      "deleted": [],
+      "method": "SHA256 comparison with snapshot at resume"
+    },
+    "user_linux_distribution_installed": false,
+    "docker_desktop_wsl_distribution_version": 2,
+    "sql_linux_runtime": {
+      "sql_version": "17.0.5045.3",
+      "versions": [
+        "001_mvp_schema",
+        "002_reservation_idempotency",
+        "003_messaging_outbox_inbox"
+      ]
+    }
+  },
+  "macro4": {
+    "real_tests": {
+      "checks": [
+        {
+          "name": "compose_ten_services_healthy",
+          "result": "passed",
+          "details": {
+            "services": [
+              "audit-worker",
+              "availability-api",
+              "availability-worker",
+              "core-api",
+              "frontend",
+              "notifications-worker",
+              "outbox-relay",
+              "rabbitmq",
+              "redis",
+              "sqlserver"
+            ]
+          }
+        },
+        {
+          "name": "private_metrics_and_probes",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "sql_readonly_permissions",
+          "result": "passed",
+          "details": {
+            "write_denied": true,
+            "password_hash_read_denied": true
+          }
+        },
+        {
+          "name": "three_roles_http_regression",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "linux_odbc_public_availability",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "availability_down_retry_open_bypass_sql",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "availability_half_open_closed_recovery",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "real_redis_down_sql_fallback_recovery",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "broker_down_domain_commit_outbox_pending",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "broker_recovery_confirmed_delivery",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "hotel_reservation_payment_replay_cancel",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "consumer_down_queue_retained_recovery",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "activity_payment_and_idempotent_effects",
+          "result": "passed",
+          "details": {
+            "events": 8,
+            "notifications": 4
+          }
+        },
+        {
+          "name": "real_cross_process_json_trace_chain",
+          "result": "passed",
+          "details": {
+            "trace_id": "dd2aefd897b787a7fddf6c0c5f75d6eb",
+            "span_count": 8
+          }
+        },
+        {
+          "name": "sql_dependency_down_liveness_and_unhealthy",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "container_restart_dependency_recovery",
+          "result": "passed",
+          "details": null
+        },
+        {
+          "name": "temporary_bookings_cleaned",
+          "result": "passed",
+          "details": {
+            "reservations": 2,
+            "payments": 2
+          }
+        },
+        {
+          "name": "native_demo_preserved_exactly",
+          "result": "passed",
+          "details": null
+        }
+      ],
+      "blocked": [],
+      "native_before": {
+        "usuarios": {
+          "count": 3,
+          "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+        },
+        "hoteles": {
+          "count": 3,
+          "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+        },
+        "habitaciones": {
+          "count": 7,
+          "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+        },
+        "actividades": {
+          "count": 2,
+          "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+        },
+        "actividad_turnos": {
+          "count": 6,
+          "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+        },
+        "reservas": {
+          "count": 3,
+          "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+        },
+        "pagos": {
+          "count": 3,
+          "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+        },
+        "viajes": {
+          "count": 2,
+          "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+        },
+        "viaje_hoteles": {
+          "count": 3,
+          "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+        },
+        "eventos_procesados": {
+          "count": 3,
+          "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+        }
+      },
+      "isolated_after": {
+        "usuarios": {
+          "count": 3,
+          "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+        },
+        "hoteles": {
+          "count": 3,
+          "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+        },
+        "habitaciones": {
+          "count": 7,
+          "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+        },
+        "actividades": {
+          "count": 2,
+          "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+        },
+        "actividad_turnos": {
+          "count": 6,
+          "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+        },
+        "reservas": {
+          "count": 3,
+          "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+        },
+        "pagos": {
+          "count": 3,
+          "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+        },
+        "viajes": {
+          "count": 2,
+          "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+        },
+        "viaje_hoteles": {
+          "count": 3,
+          "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+        },
+        "eventos_procesados": {
+          "count": 3,
+          "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+        }
+      },
+      "native_after": {
+        "usuarios": {
+          "count": 3,
+          "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+        },
+        "hoteles": {
+          "count": 3,
+          "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+        },
+        "habitaciones": {
+          "count": 7,
+          "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+        },
+        "actividades": {
+          "count": 2,
+          "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+        },
+        "actividad_turnos": {
+          "count": 6,
+          "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+        },
+        "reservas": {
+          "count": 3,
+          "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+        },
+        "pagos": {
+          "count": 3,
+          "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+        },
+        "viajes": {
+          "count": 2,
+          "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+        },
+        "viaje_hoteles": {
+          "count": 3,
+          "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+        },
+        "eventos_procesados": {
+          "count": 3,
+          "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+        }
+      },
+      "dbcc_violations": 0
+    },
+    "date": "2026-11-10",
+    "status": "COMPLETED",
+    "previous_phases_preserved": true,
+    "macro5_started": false,
+    "tests": {
+      "windows": {
+        "passed": 643,
+        "failed": 0,
+        "skipped": 15,
+        "seconds": 45.14
+      },
+      "linux": {
+        "passed": 643,
+        "failed": 0,
+        "skipped": 15,
+        "seconds": 48.57
+      },
+      "sqlserver": {
+        "passed": 1245,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 106.07
+      },
+      "frontend": {
+        "passed": 138,
+        "failed": 0,
+        "skipped": 0,
+        "total": 138
+      },
+      "skips_explanation": "15 SQL opt-in concurrency cases: 4 stock/inventory, 11 payment/cancellation. All executed successfully in --sqlserver run (0 skips). SQL opt-in total mixes SQLite and SQL variants; never runs against demo."
+    },
+    "frontend_historical_debt": {
+      "initial_failed": 28,
+      "final_failed": 0,
+      "tests_removed": 0,
+      "classification": "docs/evidence/tests/frontend-debt.json"
+    },
+    "http_system": {
+      "checks": 33,
+      "concurrency_cases": 5,
+      "security_cases": 12,
+      "failed": 0,
+      "evidence": "docs/evidence/system/http.json"
+    },
+    "distributed": {
+      "passed": 23,
+      "failed": 0,
+      "blocked": 0,
+      "evidence": "docs/evidence/integration/distributed.json"
+    },
+    "browser": {
+      "real_booking_flows": 2,
+      "flow_state_axe_scans": 30,
+      "page_errors": 0,
+      "http_errors": 0,
+      "dom_xss_escaped": true,
+      "evidence": "docs/evidence/system/browser-flows.json"
+    },
+    "accessibility": {
+      "pages": 25,
+      "viewport_checks": 125,
+      "widths": [
+        1440,
+        1366,
+        1024,
+        768,
+        390
+      ],
+      "axe_violations_after": 0,
+      "overflows_after": 0,
+      "formal_manual_certification": false,
+      "tool": "Playwright1.65.0 / axe4.14.0",
+      "keyboard_checks": 3,
+      "evidence": "docs/evidence/accessibility/browser.json"
+    },
+    "performance": {
+      "tool": "Locust2.47.0",
+      "measured_scenarios": 11,
+      "sample_requests": 53046,
+      "sample_http503": 34,
+      "comparison": {
+        "mean_reduction_percent": 43.59879961271649,
+        "p95_reduction_percent": 46.666666666666664,
+        "throughput_increase_percent": 23.27603523454844
+      },
+      "miss_mean_ms": 60.4697382479461,
+      "hit_mean_ms": 34.1056582428899,
+      "miss_p95_ms": 180,
+      "hit_p95_ms": 96,
+      "hit_throughput": 88.00471214854834,
+      "fresh_reservations": {
+        "requests": 20,
+        "created": 20,
+        "failed": 0
+      },
+      "evidence": "docs/evidence/performance/summary.json"
+    },
+    "openapi": {
+      "paths": 51,
+      "operations": 61,
+      "live_capture": "docs/evidence/openapi/openapi.json",
+      "domain_dtos_changed": false,
+      "new_endpoints": 0,
+      "updated_documentation": [
+        "413",
+        "429",
+        "503",
+        "Viajes404/409"
+      ]
+    },
+    "sql": {
+      "native_demo_preserved": true,
+      "copied_demo_restored": true,
+      "dbcc_violations": 0,
+      "qa_removed_reservations": 49,
+      "qa_removed_payments": 7,
+      "fault_test_removed_reservations": 2,
+      "fault_test_removed_payments": 2,
+      "original_schema_changed": false,
+      "new_migrations": 0,
+      "evidence": "docs/evidence/system/final.json"
+    },
+    "final_runtime": {
+      "healthy_services": [
+        "audit-worker",
+        "availability-api",
+        "availability-worker",
+        "core-api",
+        "frontend",
+        "notifications-worker",
+        "outbox-relay",
+        "rabbitmq",
+        "redis",
+        "sqlserver"
+      ],
+      "ready": {
+        "database": "ok",
+        "redis": "ok",
+        "rabbitmq": "ok",
+        "status": "ready"
+      },
+      "login_limit_restored": 10,
+      "payment_limit_restored": 30,
+      "native_env_unchanged": true,
+      "local_docker_only": true
+    },
+    "functional_fixes": [
+      {
+        "file": "frontend/js/utils/reservas.js",
+        "fix": "Reject invalid hotel checkin in Próximas filter"
+      },
+      {
+        "file": "frontend/js/services/reservas.service.js",
+        "fix": "Reject absent/non-finite/negative API total instead of silently displaying zero"
+      },
+      {
+        "file": "frontend/styles.css",
+        "fix": "Two contrast failures and long valid hotel heading overflow"
+      }
+    ],
+    "documentation": [
+      "README.md",
+      "backend/README.md",
+      "docs/AE4_CONTEXT.md",
+      "docs/AE4_ARCHITECTURE.md",
+      "docs/AE4_IMPLEMENTATION_PLAN.md",
+      "docs/AE4_EVENTS.md",
+      "docs/AE4_SECURITY.md",
+      "docs/AE4_OBSERVABILITY.md",
+      "docs/AE4_DIAGRAMS.md",
+      "docs/AE4_EVIDENCE_INDEX.md"
+    ],
+    "limitations": [
+      "Timed load profiles initially use a periodic CSV snapshot; final JSON export added for reproducibility; percentiles bucketed, one run per profile.",
+      "2 HTTP503 under reservation replay contention;32 HTTP503 at75 VUs retained; 50 VUs exceeds proposed500ms GET P95 target; no unbounded throughput guarantee.",
+      "Axe + exercised keyboard/flows do not certify exhaustive manual WCAG or a full pentest.",
+      "Legacy Viajes AE2 planning overlap race remains outside hotel/activity inventory guarantees; CHECK drift of native legacy schema unchanged.",
+      "Local HTTP/self-signed SQL trust; no production TLS, HA, cloud, CI/CD, registry or release.",
+      "Existing Starlette/httpx TestClient deprecation warning; no runtime dependency changes solely to silence it."
+    ],
+    "files": {
+      "modified": [
+        "backend/README.md",
+        "backend/main.py",
+        "backend/scripts/validate_macro3.py",
+        "backend/tests/test_macro3_controls.py",
+        "docs/AE4_ARCHITECTURE.md",
+        "docs/AE4_CONTEXT.md",
+        "docs/AE4_EVENTS.md",
+        "docs/AE4_IMPLEMENTATION_PLAN.md",
+        "docs/AE4_OBSERVABILITY.md",
+        "docs/AE4_SECURITY.md",
+        "docs/AE4_VALIDATION.json",
+        "frontend/js/services/reservas.service.js",
+        "frontend/js/utils/reservas.js",
+        "frontend/styles.css",
+        "frontend/tests/actividades.test.mjs",
+        "frontend/tests/auth.test.mjs",
+        "frontend/tests/catalogo.test.mjs",
+        "frontend/tests/checkout.test.mjs",
+        "frontend/tests/confirmacion.test.mjs",
+        "frontend/tests/disponibilidad.test.mjs",
+        "frontend/tests/habitaciones.test.mjs",
+        "frontend/tests/reservas.test.mjs",
+        "frontend/tests/roles.test.mjs",
+        "frontend/tests/services.test.mjs"
+      ],
+      "created": [
+        "README.md",
+        "backend/performance/locustfile.py",
+        "backend/requirements-qa.txt",
+        "backend/scripts/macro4_fixture.py",
+        "backend/scripts/macro4_support.py",
+        "backend/scripts/qa_backend.py",
+        "backend/scripts/qa_browser.py",
+        "backend/scripts/qa_cleanup.py",
+        "backend/scripts/qa_fresh_load.py",
+        "backend/scripts/qa_keyboard.py",
+        "backend/scripts/qa_load.py",
+        "backend/scripts/qa_prepare.py",
+        "backend/scripts/qa_system.py",
+        "backend/scripts/qa_ui_flow.py",
+        "backend/tests/test_macro4_contract.py",
+        "docs/AE4_DIAGRAMS.md",
+        "docs/AE4_EVIDENCE_INDEX.md",
+        "docs/evidence/accessibility/browser.json",
+        "docs/evidence/accessibility/fixes.json",
+        "docs/evidence/accessibility/keyboard.json",
+        "docs/evidence/integration/distributed.json",
+        "docs/evidence/openapi/openapi.json",
+        "docs/evidence/performance/README.md",
+        "docs/evidence/performance/availability_fallback_failures.csv",
+        "docs/evidence/performance/availability_fallback_stats.csv",
+        "docs/evidence/performance/availability_hit_failures.csv",
+        "docs/evidence/performance/availability_hit_stats.csv",
+        "docs/evidence/performance/availability_miss_failures.csv",
+        "docs/evidence/performance/availability_miss_stats.csv",
+        "docs/evidence/performance/environment.json",
+        "docs/evidence/performance/hotels_failures.csv",
+        "docs/evidence/performance/hotels_stats.csv",
+        "docs/evidence/performance/login_failures.csv",
+        "docs/evidence/performance/login_stats.csv",
+        "docs/evidence/performance/payment_failures.csv",
+        "docs/evidence/performance/payment_stats.csv",
+        "docs/evidence/performance/reservation_create.json",
+        "docs/evidence/performance/reservation_create_failures.csv",
+        "docs/evidence/performance/reservation_create_stats.csv",
+        "docs/evidence/performance/reservation_failures.csv",
+        "docs/evidence/performance/reservation_stats.csv",
+        "docs/evidence/performance/stress_25_failures.csv",
+        "docs/evidence/performance/stress_25_stats.csv",
+        "docs/evidence/performance/stress_50_failures.csv",
+        "docs/evidence/performance/stress_50_stats.csv",
+        "docs/evidence/performance/stress_75_failures.csv",
+        "docs/evidence/performance/stress_75_stats.csv",
+        "docs/evidence/performance/summary.json",
+        "docs/evidence/resilience/faults.json",
+        "docs/evidence/system/browser-flows.json",
+        "docs/evidence/system/cleanup.json",
+        "docs/evidence/system/final.json",
+        "docs/evidence/system/http.json",
+        "docs/evidence/tests/frontend-debt.json",
+        "docs/evidence/tests/summary.json"
+      ],
+      "deleted": []
+    },
+    "file_totals": {
+      "modified": 24,
+      "created": 55,
+      "deleted": 0
+    }
+  }
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "hotel_id": 1,
+    "external_id": "BK-DEMO-10001",
+    "proveedor": "Booking.com",
+    "datos_simulados": true,
+    "precio_base": 85000,
+    "precio_actual": 79000,
+    "precio_anterior": 85000,
+    "moneda": "ARS",
+    "descuento_porcentaje": 7,
+    "promocion_titulo": "Tarifa promocional simulada",
+    "fecha_actualizacion": "2026-09-28T18:00:00"
+  },
+  {
+    "hotel_id": 2,
+    "external_id": "BK-DEMO-10002",
+    "proveedor": "Booking.com",
+    "datos_simulados": true,
+    "precio_base": 72000,
+    "precio_actual": 62000,
+    "precio_anterior": 72000,
+    "moneda": "ARS",
+    "descuento_porcentaje": 14,
+    "promocion_titulo": "Promoción urbana simulada",
+    "fecha_actualizacion": "2026-09-28T18:10:00"
+  },
+  {
+    "hotel_id": 3,
+    "external_id": "BK-DEMO-10003",
+    "proveedor": "Booking.com",
+    "datos_simulados": true,
+    "precio_base": 54000,
+    "precio_actual": 45900,
+    "precio_anterior": 54000,
+    "moneda": "ARS",
+    "descuento_porcentaje": 15,
+    "promocion_titulo": "Tarifa anticipada simulada",
+    "fecha_actualizacion": "2026-09-28T18:05:00"
+  }
+]

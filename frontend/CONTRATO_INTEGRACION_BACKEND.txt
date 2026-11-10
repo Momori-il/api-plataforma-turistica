@@ -1,0 +1,102 @@
+CONTRATO DE INTEGRACION - FRONTEND AE2 <-> BACKEND FASTAPI
+===========================================================
+
+OBJETIVO
+--------
+Este documento permite integrar el backend definitivo sin rehacer el frontend.
+No es obligatorio que el backend use exactamente todos los campos opcionales, pero debe respetar los campos basicos que ya consume la interfaz.
+
+1. HOTELES - LISTADO
+--------------------
+Endpoint esperado:
+GET http://localhost:8000/api/v1/hoteles/
+
+Respuesta minima compatible (array JSON):
+[
+  {
+    "id": 1,
+    "nombre": "Hotel Ejemplo",
+    "zona_id": 1,
+    "precio_base": 85000,
+    "descripcion": "...",
+    "direccion": "Posadas, Misiones",
+    "categoria": 4,
+    "calificacion": 4.2,
+    "servicio": "WiFi, Piscina"
+  }
+]
+
+Campos opcionales A03/A06 que el frontend ya entiende:
+- precio_actual
+- precio_promocional
+- precio_externo
+- precio_anterior
+- descuento_porcentaje
+- promocion_titulo
+- proveedor / proveedor_externo
+- external_id
+- fuente_externa / fuente_precio / fuente
+- url_fuente
+- fecha_actualizacion / actualizado_en / updated_at
+- imagen / servicios
+
+2. HOTEL - DETALLE
+------------------
+Endpoint esperado:
+GET http://localhost:8000/api/v1/hoteles/{id}
+
+Debe devolver un objeto JSON de hotel compatible con los campos anteriores.
+
+3. ACTIVIDADES
+--------------
+Endpoint futuro esperado:
+GET http://localhost:8000/api/v1/actividades/
+
+El frontend acepta cualquiera de estas formas:
+A) Array directo: [ {...}, {...} ]
+B) { "actividades": [ {...} ] }
+C) { "data": [ {...} ] }
+
+Campos compatibles por actividad:
+- id
+- external_id
+- nombre / titulo
+- tipo / categoria
+- descripcion / detalle
+- precio / precio_base / tarifa
+- moneda
+- ubicacion / direccion
+- proveedor / fuente
+- fecha_actualizacion / actualizado_en
+- imagen / imagen_url
+
+4. CACHE REDIS - HEADERS OPCIONALES
+-----------------------------------
+Para demostrar A05 sin cambiar el JSON:
+
+X-Cache: HIT | MISS
+X-Cache-TTL: 300
+X-Data-Source: Redis | SQL Server | Proveedor externo
+X-Last-Updated: 2026-09-28T21:00:00
+
+Si se usa CORS y se desea leer estos headers desde el navegador, exponerlos en CORSMiddleware.
+
+5. ERRORES
+----------
+El frontend ya maneja:
+- 400/422: solicitud invalida
+- 404: no encontrado
+- 500+: error del servidor
+- timeout
+- error de red
+
+Cuando sea posible, devolver errores JSON con "detail" o "message".
+
+6. CORS
+-------
+Si el frontend se ejecuta con Live Server (ej. localhost:5500) y FastAPI en localhost:8000, el backend debe permitir el origen del frontend mediante CORSMiddleware.
+
+7. PRINCIPIO CLAVE
+------------------
+El backend puede cambiar internamente (SQL Server, Redis, scraping, APIs externas), pero el frontend no deberia necesitar saberlo.
+Debe seguir consumiendo la misma API REST.

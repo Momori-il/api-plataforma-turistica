@@ -1,0 +1,247 @@
+{
+  "checks": [
+    {
+      "name": "compose_ten_services_healthy",
+      "result": "passed",
+      "details": {
+        "services": [
+          "audit-worker",
+          "availability-api",
+          "availability-worker",
+          "core-api",
+          "frontend",
+          "notifications-worker",
+          "outbox-relay",
+          "rabbitmq",
+          "redis",
+          "sqlserver"
+        ]
+      }
+    },
+    {
+      "name": "private_metrics_and_probes",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "sql_readonly_permissions",
+      "result": "passed",
+      "details": {
+        "write_denied": true,
+        "password_hash_read_denied": true
+      }
+    },
+    {
+      "name": "three_roles_http_regression",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "linux_odbc_public_availability",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "availability_down_retry_open_bypass_sql",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "availability_half_open_closed_recovery",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "real_redis_down_sql_fallback_recovery",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "broker_down_domain_commit_outbox_pending",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "broker_recovery_confirmed_delivery",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "hotel_reservation_payment_replay_cancel",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "consumer_down_queue_retained_recovery",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "activity_payment_and_idempotent_effects",
+      "result": "passed",
+      "details": {
+        "events": 8,
+        "notifications": 4
+      }
+    },
+    {
+      "name": "real_cross_process_json_trace_chain",
+      "result": "passed",
+      "details": {
+        "trace_id": "dd2aefd897b787a7fddf6c0c5f75d6eb",
+        "span_count": 8
+      }
+    },
+    {
+      "name": "sql_dependency_down_liveness_and_unhealthy",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "container_restart_dependency_recovery",
+      "result": "passed",
+      "details": null
+    },
+    {
+      "name": "temporary_bookings_cleaned",
+      "result": "passed",
+      "details": {
+        "reservations": 2,
+        "payments": 2
+      }
+    },
+    {
+      "name": "native_demo_preserved_exactly",
+      "result": "passed",
+      "details": null
+    }
+  ],
+  "blocked": [],
+  "native_before": {
+    "usuarios": {
+      "count": 3,
+      "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+    },
+    "hoteles": {
+      "count": 3,
+      "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+    },
+    "habitaciones": {
+      "count": 7,
+      "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+    },
+    "actividades": {
+      "count": 2,
+      "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+    },
+    "actividad_turnos": {
+      "count": 6,
+      "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+    },
+    "reservas": {
+      "count": 3,
+      "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+    },
+    "pagos": {
+      "count": 3,
+      "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+    },
+    "viajes": {
+      "count": 2,
+      "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+    },
+    "viaje_hoteles": {
+      "count": 3,
+      "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+    },
+    "eventos_procesados": {
+      "count": 3,
+      "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+    }
+  },
+  "isolated_after": {
+    "usuarios": {
+      "count": 3,
+      "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+    },
+    "hoteles": {
+      "count": 3,
+      "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+    },
+    "habitaciones": {
+      "count": 7,
+      "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+    },
+    "actividades": {
+      "count": 2,
+      "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+    },
+    "actividad_turnos": {
+      "count": 6,
+      "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+    },
+    "reservas": {
+      "count": 3,
+      "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+    },
+    "pagos": {
+      "count": 3,
+      "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+    },
+    "viajes": {
+      "count": 2,
+      "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+    },
+    "viaje_hoteles": {
+      "count": 3,
+      "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+    },
+    "eventos_procesados": {
+      "count": 3,
+      "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+    }
+  },
+  "native_after": {
+    "usuarios": {
+      "count": 3,
+      "sha256": "d9bbe38fa75688f42ab2e30d7df2027eb8dac481fb5e64fa771109c4ceef921f"
+    },
+    "hoteles": {
+      "count": 3,
+      "sha256": "32b5d8e51155146700c9560aa9560247c226cedfa85f3d97d1a6f558935a6da5"
+    },
+    "habitaciones": {
+      "count": 7,
+      "sha256": "e255fdf08fc1c851e1adecaa467ee9ae02bcd14af181c51e978ebe620bec136c"
+    },
+    "actividades": {
+      "count": 2,
+      "sha256": "95fae7069e9542c367cfadf06dbfcc33a32ba7a4cae36939bec290f8aab84d3f"
+    },
+    "actividad_turnos": {
+      "count": 6,
+      "sha256": "c3e741764b42bed20658a24ff6aa9b39b88c15a21f900fdae661b8983c7fcd10"
+    },
+    "reservas": {
+      "count": 3,
+      "sha256": "fee1b2a338a870843192984bc23622d86a7b69174decc3c897767bcc5b1f035d"
+    },
+    "pagos": {
+      "count": 3,
+      "sha256": "f4de091257505326ec6cf2816ae24182b5211281388b84d0dba0b82bbb36c40b"
+    },
+    "viajes": {
+      "count": 2,
+      "sha256": "352c2d28107b6845a5d9dbd9910ede097b17344369ccb654798a29af7352effe"
+    },
+    "viaje_hoteles": {
+      "count": 3,
+      "sha256": "412030872f24d8251d650895c01d796657f2688bcee40516552ff99e05b668b4"
+    },
+    "eventos_procesados": {
+      "count": 3,
+      "sha256": "b754c5cf57de315acfa152f165a5e69b198efc6c95852fc92a9cafc044af34ab"
+    }
+  },
+  "dbcc_violations": 0
+}

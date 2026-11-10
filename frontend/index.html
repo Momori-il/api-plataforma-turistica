@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PosadasTurismo - Alojamientos en Posadas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/session.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="home-page">
+    <header class="header" data-header><a href="index.html" class="logo">PosadasTurismo</a></header>
+    <section class="hero hero-home" aria-labelledby="home-title">
+        <div class="hero-content">
+            <span class="hero-eyebrow">Posadas, Misiones</span>
+            <h1 id="home-title">Alojamientos en Posadas</h1>
+            <p>Tu próxima escapada, a orillas del Paraná.</p>
+        </div>
+    </section>
+    <section class="search-band" aria-label="Buscar alojamiento">
+        <form class="search-container" id="form-busqueda" novalidate>
+            <div class="search-field"><label for="ubicacion">Destino</label><input id="ubicacion" value="Posadas, Misiones" readonly></div>
+            <div class="search-field"><label for="checkin">Entrada</label><input id="checkin" type="date" required aria-describedby="busqueda-error"></div>
+            <div class="search-field"><label for="checkout">Salida</label><input id="checkout" type="date" required aria-describedby="busqueda-error"></div>
+            <div class="search-field"><label for="huespedes">Huéspedes</label><select id="huespedes"><option value="1">1 adulto</option><option value="2" selected>2 adultos</option><option value="3">3 adultos</option><option value="4">4 adultos</option><option value="5">5 adultos</option></select></div>
+            <div class="search-field"><label for="habitaciones">Habitaciones</label><select id="habitaciones"><option value="1">1 habitación</option><option value="2">2 habitaciones</option><option value="3">3 habitaciones</option></select></div>
+            <button type="submit" class="btn-search">Buscar</button>
+            <p id="busqueda-error" class="field-message" role="alert" hidden></p>
+        </form>
+    </section>
+    <main>
+        <section id="destacados" class="home-section" aria-labelledby="destacados-title">
+            <div class="section-heading"><h2 id="destacados-title">Alojamientos destacados</h2><a href="#alojamientos">Ver todos los alojamientos</a></div>
+            <div id="destacados-lista" class="discovery-grid" aria-live="polite"><p>Cargando alojamientos…</p></div>
+        </section>
+        <section id="alojamientos" class="home-section catalog-section" aria-labelledby="catalogo-title">
+            <div class="section-heading"><div><span class="section-kicker">Tu estadía</span><h2 id="catalogo-title">Encontrá dónde hospedarte</h2></div><p id="busqueda-resumen">Posadas, Misiones</p></div>
+            <div class="catalog-layout">
+                <aside class="catalog-filters" aria-label="Filtros de alojamientos">
+                    <details id="catalogo-filtros" open><summary>Filtros</summary>
+                    <form id="form-filtros" novalidate>
+                        <div class="filter-title"><h3>Filtrar por</h3><button type="reset" class="text-action">Limpiar</button></div>
+                        <label class="filter-label" for="nombre-hotel">Nombre del alojamiento</label><input id="nombre-hotel" type="search" placeholder="Nombre o zona">
+                        <fieldset><legend>Precio por noche (ARS)</legend><div class="filter-row"><div><label for="precio-min">Mínimo</label><input id="precio-min" type="number" min="0" placeholder="0"></div><div><label for="precio-max">Máximo</label><input id="precio-max" type="number" min="0" placeholder="Sin tope"></div></div></fieldset>
+                        <fieldset><legend>Categoría</legend><label class="check-option"><input type="checkbox" name="categoria" value="5">5 estrellas</label><label class="check-option"><input type="checkbox" name="categoria" value="4">4 estrellas</label><label class="check-option"><input type="checkbox" name="categoria" value="3">3 estrellas</label></fieldset>
+                        <fieldset><legend>Zona</legend><label class="check-option"><input type="checkbox" name="zona" value="Microcentro">Microcentro</label><label class="check-option"><input type="checkbox" name="zona" value="Costanera">Costanera</label><label class="check-option"><input type="checkbox" name="zona" value="Aeropuerto">Aeropuerto</label></fieldset>
+                        <fieldset><legend>Servicios</legend><label class="check-option"><input type="checkbox" name="servicio" value="WiFi">WiFi</label><label class="check-option"><input type="checkbox" name="servicio" value="Piscina">Piscina</label><label class="check-option"><input type="checkbox" name="servicio" value="Estacionamiento">Estacionamiento</label><label class="check-option"><input type="checkbox" name="servicio" value="Desayuno">Desayuno</label><label class="check-option"><input type="checkbox" name="servicio" value="Aire acondicionado">Aire acondicionado</label></fieldset>
+                        <fieldset><legend>Calificación sobre 5</legend><label class="check-option"><input type="checkbox" name="calificacion" value="4">4 o más</label><label class="check-option"><input type="checkbox" name="calificacion" value="3">3 o más</label></fieldset>
+                        <label class="check-option"><input id="solo-ofertas" type="checkbox">Solo con promoción</label>
+                        <p id="filtros-error" class="field-message" role="alert" hidden></p>
+                        <button class="btn-submit btn-full" type="submit">Aplicar filtros</button>
+                    </form>
+                    </details>
+                </aside>
+                <section class="results-panel" aria-label="Resultados de alojamientos">
+                    <div class="results-toolbar"><p id="resultados-cantidad" role="status" aria-live="polite"></p><div><label for="orden-hoteles">Ordenar por</label><select id="orden-hoteles"><option value="recomendados">Recomendados</option><option value="precio-asc">Precio menor a mayor</option><option value="precio-desc">Precio mayor a menor</option><option value="puntuacion">Mejor puntuados</option><option value="categoria">Categoría</option><option value="nombre">Nombre</option></select></div></div>
+                    <p id="catalogo-aviso" class="catalog-notice" hidden>Tarifas y calificaciones de demostración. Las fechas y los huéspedes no confirman disponibilidad.</p>
+                    <div id="loading-spinner" class="catalog-state" role="status"><div class="spinner" aria-hidden="true"></div><p>Buscando alojamientos…</p></div>
+                    <div id="error-banner" class="catalog-state hidden" role="alert"><h3>No pudimos cargar los alojamientos</h3><p>Revisá tu conexión e intentá nuevamente.</p><button id="btn-reintentar-hoteles" class="btn-submit" type="button">Reintentar</button></div>
+                    <div id="empty-banner" class="catalog-state hidden" role="status"><h3>No encontramos coincidencias</h3><p>Probá con otro precio, zona o categoría.</p><button id="limpiar-resultados" class="btn-submit" type="button">Limpiar filtros</button></div>
+                    <div id="listado" class="hotel-list"></div>
+                </section>
+            </div>
+        </section>
+        <section class="home-section" aria-labelledby="ofertas-title"><div class="section-heading"><h2 id="ofertas-title">Ofertas para tu próxima escapada</h2><a href="ofertas.html">Ver todas las ofertas</a></div><div id="home-ofertas" class="discovery-grid" aria-live="polite"><p>Cargando ofertas…</p></div></section>
+        <section class="home-section" aria-labelledby="actividades-title"><div class="section-heading"><h2 id="actividades-title">Actividades recomendadas</h2><a href="actividades.html">Ver todas las actividades</a></div><div id="home-actividades" class="discovery-grid" aria-live="polite"><p>Cargando actividades…</p></div></section>
+        <section class="discover-band" aria-labelledby="descubri-title"><div class="home-section discover-inner"><img src="img/costanera-posadas.png" alt="Vista de la Costanera de Posadas junto al río Paraná" loading="lazy"><div><span class="section-kicker">Misiones, Argentina</span><h2 id="descubri-title">Descubrí Posadas</h2><p>El río, la ciudad y una nueva forma de disfrutar tu tiempo.</p><div class="discover-links"><a href="#alojamientos" data-zona="Costanera">Alojarme en la Costanera</a><a href="#alojamientos" data-zona="Microcentro">Alojarme en el centro</a><a href="actividades.html">Explorar actividades</a></div></div></div></section>
+    </main>
+    <footer class="footer"><p>&copy; 2026 PosadasTurismo</p></footer>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

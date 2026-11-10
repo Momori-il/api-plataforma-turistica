@@ -1,0 +1,137 @@
+/* Navegacion y superficies privadas de F2. */
+[data-header] { gap: 1.5rem; padding: 0 2rem; }
+[data-header] .logo { font-size: 1.8rem; letter-spacing: 0; }
+[data-header] .nav { gap: 1.3rem; }
+[data-header] .nav a { white-space: nowrap; }
+[data-header] a:focus-visible, [data-header] button:focus-visible, [data-header] summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+.guest-actions { display: flex; align-items: center; gap: 1rem; }
+.mobile-nav-toggle { display: none; min-height: 40px; border: 1px solid var(--border-color); border-radius: 5px; background: white; padding: .4rem .8rem; cursor: pointer; }
+.account-menu { position: relative; min-width: 95px; }
+.account-menu summary { cursor: pointer; font-weight: 700; font-size: .94rem; padding: .65rem 0; max-width: 180px; overflow-wrap: anywhere; }
+.account-dropdown { position: absolute; right: 0; top: 100%; width: 270px; max-width: calc(100vw - 2rem); padding: .5rem; border: 1px solid var(--border-color); border-radius: 6px; box-shadow: var(--shadow); background: white; color: var(--text-dark); z-index: 60; }
+.account-identity { display: grid; gap: .2rem; padding: .7rem; margin-bottom: .35rem; border-bottom: 1px solid var(--border-color); overflow-wrap: anywhere; font-size: .8rem; }
+.account-identity span { color: var(--text-muted); }
+.account-dropdown a, .account-dropdown button { display: block; width: 100%; border: 0; background: transparent; border-radius: 4px; padding: .7rem; text-align: left; color: var(--text-dark); font-size: .9rem; font-weight: 600; cursor: pointer; text-decoration: none; }
+.account-dropdown a:hover, .account-dropdown button:hover { background: var(--primary-soft); transform: none; }
+.account-identity .role-label, .role-label { color: var(--primary-dark); font-size: .75rem; font-weight: 700; }
+.auth-page { display: block; padding: 0; }
+.auth-page .glass-card { margin: 3rem auto; width: min(430px, calc(100% - 2rem)); border-radius: 8px; }
+.demo-access { margin-top: 1.4rem; padding-top: 1.2rem; border: 0; border-top: 1px solid rgba(255,255,255,.3); }
+.demo-access legend { float: left; width: 100%; margin-bottom: .7rem; font-size: .78rem; text-align: left; }
+.demo-roles { clear: both; display: grid; grid-template-columns: 1fr 1fr 1.35fr; border: 1px solid rgba(255,255,255,.5); border-radius: 5px; overflow: hidden; }
+.demo-roles button { min-height: 42px; padding: .45rem .25rem; border: 0; border-right: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.1); color: white; font-size: .77rem; cursor: pointer; }
+.demo-roles button:last-child { border-right: 0; }
+.demo-roles button:hover, .demo-roles button:focus-visible { background: var(--primary-dark); }
+.demo-roles button:disabled { opacity: .6; cursor: wait; }
+.private-page:not(.access-granted) main { display: none; }
+.workspace-main { width: min(1180px, calc(100% - 3rem)); min-height: calc(100vh - 180px); margin: 0 auto; padding: 2.8rem 0 3rem; }
+.workspace-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 2rem; }
+.workspace-heading h1 { font-size: 1.9rem; line-height: 1.2; margin: .25rem 0; letter-spacing: 0; overflow-wrap: anywhere; }
+.workspace-heading .workspace-account { color: var(--text-muted); font-size: .85rem; overflow-wrap: anywhere; }
+.workspace-actions { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
+.workspace-actions a, .workspace-button { display: inline-block; padding: .6rem .9rem; border: 1px solid var(--border-color); border-radius: 5px; color: var(--primary-dark); background: white; font-weight: 600; font-size: .85rem; text-decoration: none; cursor: pointer; }
+.workspace-actions a:hover, .workspace-button:hover { background: var(--primary-soft); }
+.workspace-actions .primary-action { background: var(--primary); color: white; border-color: var(--primary); }
+.workspace-button:is(.danger-action, [data-hotel-approval="RECHAZADA"], [data-hotel-state="INACTIVO"], [data-next-active="false"], [data-nuevo-estado="INACTIVO"]) { color: #943c32; border-color: #e2c7c1; background: #fffaf8; }
+.workspace-button:is(.danger-action, [data-hotel-approval="RECHAZADA"], [data-hotel-state="INACTIVO"], [data-next-active="false"], [data-nuevo-estado="INACTIVO"]):hover { background: #fae9e6; }
+.workspace-content { min-width: 0; }
+.workspace-content h2 { font-size: 1.15rem; margin: 1.8rem 0 1rem; }
+.workspace-form-section { margin-top: 2rem; padding: 2rem; border: 1px solid var(--border-color); border-top: 4px solid var(--primary); border-radius: 8px; background: white; }
+.workspace-content .workspace-form-section h2 { margin: 0 0 .75rem; }
+.workspace-form-section .workspace-note { margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.6; }
+:is(#form-actividad-gestion, #form-turno-gestion) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.15rem; }
+:is(#form-actividad-gestion, #form-turno-gestion) > label { display: grid; align-content: start; gap: .5rem; min-width: 0; font-size: .85rem; font-weight: 600; }
+#form-actividad-gestion > label:nth-of-type(-n+3) { grid-column: 1 / -1; }
+:is(#form-actividad-gestion, #form-turno-gestion) :is(input, select, textarea) { width: 100%; min-width: 0; max-width: 100%; min-height: 46px; padding: .7rem; border: 1px solid var(--border-color); border-radius: 5px; background: white; color: var(--text-dark); font: inherit; font-weight: 400; }
+:is(#form-actividad-gestion, #form-turno-gestion) textarea { min-height: 120px; resize: vertical; }
+:is(#form-actividad-gestion, #form-turno-gestion) > .workspace-actions { grid-column: 1 / -1; justify-content: end; margin-top: .35rem; }
+:is(#form-actividad-gestion, #form-turno-gestion) button { min-height: 46px; padding: .65rem 1rem; border: 1px solid var(--border-color); border-radius: 5px; font: inherit; font-weight: 600; cursor: pointer; }
+:is(#form-actividad-gestion, #form-turno-gestion) button:disabled { opacity: .65; cursor: wait; }
+/* Prevalece sobre el display:flex en línea de los filtros existentes. */
+.workspace-content :is(.workspace-actions, .workspace-filters):has(> label > select[id*="-filtro-"]) { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 1rem; align-items: end; margin-bottom: 1.25rem; }
+.workspace-content :is(.workspace-actions, .workspace-filters):has(> label > select[id*="-filtro-"]) > label { display: grid; gap: .5rem; min-width: 0; font-size: .85rem; font-weight: 600; }
+.workspace-content :is(.workspace-actions, .workspace-filters):has(> label > select[id*="-filtro-"]) :is(select, input) { width: 100%; min-width: 0; max-width: 100%; min-height: 44px; padding: .6rem; border: 1px solid var(--border-color); border-radius: 5px; background: white; color: var(--text-dark); font: inherit; font-weight: 400; }
+.workspace-content :is(.workspace-actions, .workspace-filters):has(> label > select[id*="-filtro-"]) > button { min-height: 44px; max-width: 100%; justify-self: start; }
+.workspace-field-help { display: block; color: var(--text-muted); font-size: .78rem; font-weight: 400; line-height: 1.5; }
+#listado-ofertas:not(:has(.offer-card)) { display: block; padding: 1.5rem; background: white; border: 1px solid var(--border-color); border-radius: 8px; line-height: 1.6; margin-bottom: 1.25rem; }
+.workspace-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); margin-bottom: 2rem; }
+.workspace-metrics div { padding: 1.2rem 1rem; border-right: 1px solid var(--border-color); }
+.workspace-metrics div:last-child { border-right: 0; }
+.workspace-metrics dt { font-size: .82rem; color: var(--text-muted); }
+.workspace-metrics dd { font-size: 1.85rem; font-weight: 700; margin-top: .25rem; }
+.workspace-shortcuts { display: flex; flex-wrap: wrap; gap: 1.5rem; padding: 0 0 1rem; }
+.workspace-shortcuts a { color: var(--primary-dark); font-weight: 600; text-underline-offset: 4px; }
+.table-scroll { overflow-x: auto; max-width: 100%; border-bottom: 1px solid var(--border-color); }
+.workspace-table { border-collapse: collapse; width: 100%; min-width: 640px; text-align: left; font-size: .88rem; }
+.workspace-table caption { text-align: left; font-weight: 600; margin-bottom: .75rem; }
+.workspace-table th { background: #edf0ed; color: #515b53; font-size: .76rem; font-weight: 700; }
+.workspace-table th, .workspace-table td { min-width: 0; padding: .9rem .8rem; border-top: 1px solid var(--border-color); vertical-align: middle; }
+.workspace-table td { overflow-wrap: break-word; max-width: 330px; }
+.workspace-table td:has(> .workspace-actions) { min-width: 240px; width: 26%; }
+.workspace-table .workspace-actions { gap: .5rem; }
+.workspace-table .workspace-actions + .workspace-actions { margin-top: .5rem; }
+.workspace-table .workspace-actions select { flex: 1 1 10rem; width: 10rem; min-width: 0; max-width: 100%; min-height: 44px; padding: .5rem; border: 1px solid var(--border-color); border-radius: 5px; background: white; color: var(--text-dark); font: inherit; }
+.workspace-table td > small { display: block; color: var(--text-muted); margin-top: .25rem; }
+.table-scroll[aria-label="Usuarios registrados"] td:nth-child(2), .table-scroll[aria-label="Reservas"] td:nth-child(4), .table-scroll[aria-label="Reservas generales"] td:nth-child(4) small { white-space: nowrap; overflow-wrap: normal; }
+:is(.table-scroll[aria-label="Alojamientos registrados"], .table-scroll[aria-label="Mis alojamientos"], .table-scroll[aria-label="Actividades registradas"]) :is(th, td):nth-child(3), .table-scroll[aria-label="Reservas"] :is(th, td):nth-last-child(2), .table-scroll[aria-label="Reservas generales"] :is(th, td):nth-child(6), .table-scroll[aria-label^="Habitaciones de "] :is(th, td):nth-child(4), .table-scroll[aria-label="Pagos de la reserva"] :is(th, td):nth-child(2) { white-space: nowrap; text-align: right; font-variant-numeric: tabular-nums; }
+.workspace-table tbody tr:hover { background: white; }
+.workspace-table a { color: var(--primary-dark); text-underline-offset: 3px; }
+.table-entity { display: flex; gap: .75rem; align-items: center; min-width: 200px; }
+.table-entity img { width: 58px; height: 44px; flex-shrink: 0; object-fit: cover; border-radius: 4px; }
+.table-entity strong { display: block; font-weight: 600; }
+.table-entity span { display: block; color: var(--text-muted); font-size: .77rem; }
+.reservation-dates, .reservation-code { white-space: nowrap; }
+.status-label { display: inline-block; padding: .2rem .45rem; border-radius: 4px; font-size: .75rem; white-space: nowrap; background: #e7f2e9; color: #275a38; }
+.status-label.pending { background: #fff1c9; color: #745800; }
+.status-label.cancelled { background: #fae9e6; color: #943c32; }
+.status-label.finished { background: #e9f0f4; color: #365d70; }
+.status-label.unknown { background: #edf0ed; color: #52615a; }
+.status-label.expired { background: #edf0ed; color: #52615a; }
+.workspace-empty { padding: 2.5rem 0; border-top: 1px solid var(--border-color); }
+.workspace-empty h2 { margin: 0 0 .5rem; font-size: 1.1rem; }
+.workspace-empty p { color: var(--text-muted); margin-bottom: 1rem; }
+.workspace-loading { padding: 2rem 0; color: var(--text-muted); }
+.workspace-error { padding: 1.5rem 0; color: #9c3232; }
+.workspace-error button { margin-top: .75rem; }
+.profile-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; border-top: 1px solid var(--border-color); }
+.profile-facts div { padding: 1rem 0; border-bottom: 1px solid var(--border-color); overflow-wrap: anywhere; }
+.profile-facts dt { font-size: .8rem; color: var(--text-muted); }
+.profile-facts dd { font-weight: 600; margin-top: .25rem; }
+.activity-reservation-note { margin: 1.2rem 0; color: var(--text-muted); font-size: .85rem; }
+.access-notice { padding: .9rem 1.5rem; background: #fff2cd; color: #705600; font-size: .88rem; }
+#alojamientos { scroll-margin-top: 85px; }
+
+@media (max-width: 1160px) {
+    [data-header] { flex-wrap: wrap; padding: .75rem 1.25rem; gap: .5rem; align-items: center; }
+    [data-header] .nav { width: 100%; justify-content: flex-start; gap: .6rem 1.4rem; flex-wrap: wrap; }
+    [data-header] .logo { text-align: left; }
+}
+@media (max-width: 640px) {
+    [data-header] { flex-direction: row; justify-content: space-between; }
+    [data-header] .logo { font-size: 1.6rem; }
+    .mobile-nav-toggle { display: block; }
+    [data-header] .nav { display: none; flex-direction: column; align-items: stretch; padding-top: .5rem; gap: 0; }
+    [data-header].nav-open .nav { display: flex; }
+    [data-header].nav-open { max-height: 100dvh; overflow-y: auto; }
+    [data-header] .nav > a { padding: .65rem .3rem; font-size: .92rem; }
+    .guest-actions { padding: .8rem .3rem; flex-wrap: wrap; }
+    .account-menu summary { max-width: 100%; padding: .7rem .3rem; }
+    .account-dropdown { position: static; width: 100%; max-width: none; box-shadow: none; }
+    .workspace-main { width: calc(100% - 2rem); padding-top: 1.75rem; }
+    .workspace-heading { flex-direction: column; margin-bottom: 1.4rem; }
+    .workspace-heading h1 { font-size: 1.55rem; }
+    .workspace-form-section { padding: 1.25rem; }
+    :is(#form-actividad-gestion, #form-turno-gestion) { grid-template-columns: minmax(0, 1fr); }
+    :is(#form-actividad-gestion, #form-turno-gestion) .workspace-actions button { width: 100%; }
+    .workspace-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .workspace-metrics div { border-bottom: 1px solid var(--border-color); padding: 1rem .6rem; }
+    .workspace-metrics div:nth-child(even) { border-right: 0; }
+    .workspace-metrics dd { font-size: 1.5rem; }
+    .profile-facts { grid-template-columns: 1fr; }
+    .auth-page .glass-card { margin: 1.5rem auto; padding: 1.6rem 1.4rem; }
+    .workspace-actions a { max-width: 100%; }
+}
+
+@media (max-width: 380px) {
+    [data-header] .logo { font-size: 1.35rem; }
+}

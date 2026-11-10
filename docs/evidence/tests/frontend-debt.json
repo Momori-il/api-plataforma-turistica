@@ -1,0 +1,207 @@
+{
+  "before": {
+    "passed": 110,
+    "failed": 28,
+    "total": 138
+  },
+  "classification": [
+    {
+      "file": "frontend/tests/actividades.test.mjs",
+      "original_line": 143,
+      "test": "el modo API usa los contratos de turnos y reserva sin enviar precio ni consultar mocks",
+      "classification": "MOCK ANTIGUO",
+      "reason": "IDs numéricos, API_URL explícita, rutas anidadas, payload snake_case y envelope pago/reserva reales."
+    },
+    {
+      "file": "frontend/tests/auth.test.mjs",
+      "original_line": 33,
+      "test": "registro exige los seis campos y valida email, teléfono, mínimo y coincidencia",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Registro actual exige 12 caracteres; registro real usa register -> login -> me, schema sin apellido/teléfono; recuperación API no implementada; página informativa sin formulario."
+    },
+    {
+      "file": "frontend/tests/auth.test.mjs",
+      "original_line": 53,
+      "test": "el registro persiste teléfono, excluye confirmación y mantiene el rol turista",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Registro actual exige 12 caracteres; registro real usa register -> login -> me, schema sin apellido/teléfono; recuperación API no implementada; página informativa sin formulario."
+    },
+    {
+      "file": "frontend/tests/auth.test.mjs",
+      "original_line": 94,
+      "test": "en modo API la simulación se ignora y se transmiten solo las credenciales",
+      "classification": "MOCK ANTIGUO",
+      "reason": "Registro actual exige 12 caracteres; registro real usa register -> login -> me, schema sin apellido/teléfono; recuperación API no implementada; página informativa sin formulario."
+    },
+    {
+      "file": "frontend/tests/auth.test.mjs",
+      "original_line": 108,
+      "test": "registro API acepta JWT directo y no envía confirmación ni rol",
+      "classification": "MOCK ANTIGUO",
+      "reason": "Registro actual exige 12 caracteres; registro real usa register -> login -> me, schema sin apellido/teléfono; recuperación API no implementada; página informativa sin formulario."
+    },
+    {
+      "file": "frontend/tests/auth.test.mjs",
+      "original_line": 123,
+      "test": "si se creó la cuenta pero falla el autologin se informa éxito parcial",
+      "classification": "MOCK ANTIGUO",
+      "reason": "Registro actual exige 12 caracteres; registro real usa register -> login -> me, schema sin apellido/teléfono; recuperación API no implementada; página informativa sin formulario."
+    },
+    {
+      "file": "frontend/tests/auth.test.mjs",
+      "original_line": 134,
+      "test": "si solo falla guardar la sesión, el registro no se presenta como una alta fallida",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Registro actual exige 12 caracteres; registro real usa register -> login -> me, schema sin apellido/teléfono; recuperación API no implementada; página informativa sin formulario."
+    },
+    {
+      "file": "frontend/tests/auth.test.mjs",
+      "original_line": 146,
+      "test": "recuperación mock es genérica y no altera cuentas, contraseñas ni sesiones",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Registro actual exige 12 caracteres; registro real usa register -> login -> me, schema sin apellido/teléfono; recuperación API no implementada; página informativa sin formulario."
+    },
+    {
+      "file": "frontend/tests/auth.test.mjs",
+      "original_line": 162,
+      "test": "recuperación API usa la ruta configurada y acepta respuestas sin contenido",
+      "classification": "MOCK ANTIGUO",
+      "reason": "Registro actual exige 12 caracteres; registro real usa register -> login -> me, schema sin apellido/teléfono; recuperación API no implementada; página informativa sin formulario."
+    },
+    {
+      "file": "frontend/tests/auth.test.mjs",
+      "original_line": 191,
+      "test": "el envío se habilita después de conectar el controlador y los HTML no usan GET",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Registro actual exige 12 caracteres; registro real usa register -> login -> me, schema sin apellido/teléfono; recuperación API no implementada; página informativa sin formulario."
+    },
+    {
+      "file": "frontend/tests/catalogo.test.mjs",
+      "original_line": 103,
+      "test": "tarjetas calculan noches por habitaciones y no presentan las notas mock como reseñas reales",
+      "classification": "TEST OBSOLETO",
+      "reason": "Intl es-AR inserta espacio entre símbolo y monto; se conserva aserción de importe y moneda tolerando whitespace."
+    },
+    {
+      "file": "frontend/tests/checkout.test.mjs",
+      "original_line": 219,
+      "test": "modo API solo transmite reserva, importe y método, con clave idempotente y sin tarjeta",
+      "classification": "MOCK ANTIGUO",
+      "reason": "IDs numéricos, API_URL explícita, rutas anidadas, payload snake_case y envelope pago/reserva reales."
+    },
+    {
+      "file": "frontend/tests/confirmacion.test.mjs",
+      "original_line": 124,
+      "test": "en API solo hace GET autenticado y respeta total, titularidad, errores y ausencia de datos completos",
+      "classification": "MOCK ANTIGUO",
+      "reason": "Propiedad se autoriza en backend (404), no con un email enviado por el cliente; además se corrigió total ausente/no numérico que se normalizaba a cero."
+    },
+    {
+      "file": "frontend/tests/disponibilidad.test.mjs",
+      "original_line": 30,
+      "test": "no disponibilidad requiere cupo y capacidad suficientes en el mismo tipo",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Capacidad total de personas por unidad, no cuota separada de adultos; disponibilidad anidada y snake_case."
+    },
+    {
+      "file": "frontend/tests/habitaciones.test.mjs",
+      "original_line": 28,
+      "test": "la tarifa proviene de la habitación y la capacidad distingue adultos y niños",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Capacidad total de personas por unidad, no cuota separada de adultos; disponibilidad anidada y snake_case."
+    },
+    {
+      "file": "frontend/tests/habitaciones.test.mjs",
+      "original_line": 88,
+      "test": "en API usa endpoint configurable, no mocks, y envía solo IDs y estadía",
+      "classification": "MOCK ANTIGUO",
+      "reason": "Capacidad total de personas por unidad, no cuota separada de adultos; disponibilidad anidada y snake_case."
+    },
+    {
+      "file": "frontend/tests/reservas.test.mjs",
+      "original_line": 47,
+      "test": "finalizadas se infieren solo para confirmadas mock y no modifican el registro original",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Hotel con entrada hoy puede cancelarse; actividad de hoy que ya comenzó se muestra finalizada; reloj controlado."
+    },
+    {
+      "file": "frontend/tests/reservas.test.mjs",
+      "original_line": 57,
+      "test": "las pestañas filtran ambas clases, incluyen estadías en curso y dejan inválidas/pendientes vencidas en Todas",
+      "classification": "BUG REAL",
+      "reason": "Próximas aceptaba checkin inválido si checkout era futuro; se exige entrada válida."
+    },
+    {
+      "file": "frontend/tests/reservas.test.mjs",
+      "original_line": 65,
+      "test": "no se permite cancelar reservas ya iniciadas, finalizadas, sin fechas o con estado desconocido",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Hotel con entrada hoy puede cancelarse; actividad de hoy que ya comenzó se muestra finalizada; reloj controlado."
+    },
+    {
+      "file": "frontend/tests/reservas.test.mjs",
+      "original_line": 214,
+      "test": "el modo API consulta y cancela con el contrato propuesto, sin editar mocks ni enviar estado/importe",
+      "classification": "MOCK ANTIGUO",
+      "reason": "Cancelar es PATCH sin body; respuesta ReservaResponse snake_case, error de negocio del backend."
+    },
+    {
+      "file": "frontend/tests/reservas.test.mjs",
+      "original_line": 231,
+      "test": "un error API de cancelación no informa éxito ni modifica almacenamiento local",
+      "classification": "MOCK ANTIGUO",
+      "reason": "Cancelar es PATCH sin body; respuesta ReservaResponse snake_case, error de negocio del backend."
+    },
+    {
+      "file": "frontend/tests/roles.test.mjs",
+      "original_line": 50,
+      "test": "el rol API proviene del usuario devuelto por el servidor y rechaza roles desconocidos",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Expectativa anterior al contrato FastAPI y a las reglas actuales."
+    },
+    {
+      "file": "frontend/tests/roles.test.mjs",
+      "original_line": 63,
+      "test": "registrarse siempre crea un turista aunque se envíe otro rol",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Expectativa anterior al contrato FastAPI y a las reglas actuales."
+    },
+    {
+      "file": "frontend/tests/roles.test.mjs",
+      "original_line": 149,
+      "test": "las reservas se consultan por turista, titular del alojamiento o administrador",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Expectativa anterior al contrato FastAPI y a las reglas actuales."
+    },
+    {
+      "file": "frontend/tests/services.test.mjs",
+      "original_line": 68,
+      "test": "registro y login demo persisten la cuenta y excluyen el hash de la sesión",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Expectativa anterior al contrato FastAPI y a las reglas actuales."
+    },
+    {
+      "file": "frontend/tests/services.test.mjs",
+      "original_line": 93,
+      "test": "la reserva calcula su tarifa, confirma el pago y se conserva sin duplicarse",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Expectativa anterior al contrato FastAPI y a las reglas actuales."
+    },
+    {
+      "file": "frontend/tests/services.test.mjs",
+      "original_line": 111,
+      "test": "las reservas se filtran por sesión y conservan las confirmaciones antiguas de F0",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Expectativa anterior al contrato FastAPI y a las reglas actuales."
+    },
+    {
+      "file": "frontend/tests/services.test.mjs",
+      "original_line": 126,
+      "test": "al desactivar mocks todos los servicios consultan los endpoints configurados",
+      "classification": "EXPECTATIVA ANTIGUA",
+      "reason": "Expectativa anterior al contrato FastAPI y a las reglas actuales."
+    }
+  ],
+  "additional_real_bug": "ReservaResponse sin total válido se convertía en cero; ahora INVALID_RESPONSE.",
+  "tests_removed": 0
+}

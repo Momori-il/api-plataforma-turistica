@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar - PosadasTurismo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/session.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header" data-header><a href="index.html" class="logo">PosadasTurismo</a></header>
+
+    <section class="hero hero-compact hero-explore">
+        <div class="hero-content">
+            <span class="hero-eyebrow">Experiencias</span>
+            <h1>Explorá Posadas</h1>
+            <p>Actividades, paseos y propuestas para complementar tu estadía en la ciudad.</p>
+        </div>
+    </section>
+
+    <main class="main-container">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">Qué hacer</span>
+                <h2>Actividades y experiencias</h2>
+            </div>
+            <p>Opciones turísticas pensadas para descubrir la ciudad y sus principales atractivos.</p>
+        </div>
+
+        <div id="loading-actividades" class="api-state-card api-state-loading hidden" aria-live="polite">
+            <div class="spinner" aria-hidden="true"></div>
+            <div class="api-state-content">
+                <strong>Consultando actividades...</strong>
+                <p>Buscando las experiencias disponibles.</p>
+            </div>
+        </div>
+
+        <div id="error-actividades" class="api-state-card api-state-error hidden" role="alert">
+            <div class="api-state-icon">!</div>
+            <div class="api-state-content">
+                <strong id="actividad-error-title">No se pudieron cargar las actividades</strong>
+                <p id="actividad-error-message">No fue posible completar la petición.</p>
+                <div class="api-state-actions">
+                    <button type="button" id="btn-reintentar-actividades" class="btn-api-retry">Reintentar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="empty-actividades" class="api-state-card api-state-empty hidden">
+            <div class="api-state-icon">i</div>
+            <div class="api-state-content">
+                <strong>No hay actividades disponibles</strong>
+                <p>No hay experiencias para mostrar en este momento. Volvé a consultar más adelante.</p>
+            </div>
+        </div>
+
+        <div id="success-actividades" class="api-success-note hidden" aria-live="polite">
+            <span class="api-success-dot"></span>
+            <span id="actividad-success-text">Actividades cargadas correctamente.</span>
+        </div>
+
+        <section id="listado-actividades" class="activity-grid"></section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 PosadasTurismo</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

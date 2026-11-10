@@ -1,0 +1,27 @@
+{
+  "windows": {
+    "passed": 643,
+    "failed": 0,
+    "skipped": 15,
+    "seconds": 45.14
+  },
+  "linux": {
+    "passed": 643,
+    "failed": 0,
+    "skipped": 15,
+    "seconds": 48.57
+  },
+  "sqlserver": {
+    "passed": 1245,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 106.07
+  },
+  "frontend": {
+    "passed": 138,
+    "failed": 0,
+    "skipped": 0,
+    "total": 138
+  },
+  "skips_explanation": "15 SQL opt-in concurrency cases: 4 stock/inventory, 11 payment/cancellation. All executed successfully in --sqlserver run (0 skips). SQL opt-in total mixes SQLite and SQL variants; never runs against demo."
+}

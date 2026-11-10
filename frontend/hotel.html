@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del hotel - PosadasTurismo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/session.css">
+    <link rel="stylesheet" href="css/hotel.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header" data-header><a href="index.html" class="logo">PosadasTurismo</a></header>
+
+    <main id="hotel-detalle-page" class="hotel-detail-page">
+        <div class="hotel-detail-shell api-pending" id="hotel-detail-shell">
+            <a class="detail-back-link" href="index.html">← Volver a alojamientos</a>
+
+            <!-- A02: estado del GET de un hotel específico -->
+            <div id="detalle-api-status" class="detail-api-status api-state-card api-state-loading" role="status" aria-live="polite">
+                <div class="spinner" aria-hidden="true"></div>
+                <div class="api-state-content">
+                    <strong id="detalle-api-title">Consultando alojamiento...</strong>
+                    <p id="detalle-api-message">Buscando la información del alojamiento.</p>
+                    <div id="detalle-api-actions" class="api-state-actions hidden">
+                        <button id="btn-reintentar-hotel" class="btn-api-retry" type="button">Reintentar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- A05/A06: se completa automáticamente si el backend expone headers de caché/origen -->
+            <div id="detalle-api-meta" class="integration-meta-note hidden" aria-live="polite"></div>
+
+            <section class="detail-heading">
+                <div>
+                    <span id="detalle-hotel-categoria" class="detail-category">Alojamiento</span>
+                    <h1 id="detalle-hotel-nombre">Cargando alojamiento...</h1>
+                    <p id="detalle-hotel-ubicacion" class="detail-location">Posadas, Misiones</p>
+                    <div id="detalle-calificacion" class="hotel-rating-row"></div>
+                </div>
+                <div class="detail-price-block">
+                    <span>Desde</span>
+                    <span id="detalle-precio-anterior" class="detail-old-price hidden">—</span>
+                    <strong id="detalle-hotel-precio">—</strong>
+                    <small id="detalle-promocion-precio" class="detail-promo-label hidden">Tarifa externa</small>
+                    <small>precio por habitación y noche</small>
+                </div>
+            </section>
+
+            <aside id="detalle-fuente-precio" class="external-source-panel hidden" aria-label="Origen y actualización de la tarifa">
+                <div>
+                    <span class="section-kicker">Información de la tarifa</span>
+                    <strong id="detalle-fuente-precio-texto"></strong>
+                </div>
+                <div>
+                    <span>Última actualización</span>
+                    <strong id="detalle-fecha-precio"></strong>
+                </div>
+            </aside>
+
+            <section id="detalle-galeria" class="detail-gallery" aria-label="Galería del alojamiento" tabindex="0"></section>
+            <nav class="detail-section-links" aria-label="Secciones del alojamiento"><a href="#sobre-alojamiento">Sobre este alojamiento</a><a href="#habitaciones-title">Habitaciones</a></nav>
+
+            <div class="detail-layout">
+                <section class="detail-main-column">
+                    <article id="sobre-alojamiento" class="detail-panel">
+                        <span class="section-kicker">Sobre el alojamiento</span>
+                        <h2>Información general</h2>
+                        <p id="detalle-hotel-descripcion" class="detail-description"></p>
+
+                        <div id="detalle-servicios" class="detail-services"></div>
+
+                        <div class="detail-policy">
+                            <strong>Horarios orientativos</strong>
+                            <span id="detalle-politica"></span>
+                        </div>
+                    </article>
+
+                    <section class="detail-panel rooms-section" aria-labelledby="habitaciones-title">
+                        <span class="section-kicker">Tu habitación</span>
+                        <h2 id="habitaciones-title">Habitaciones</h2>
+                        <p id="habitaciones-aviso" class="room-notice">Habitaciones, fotos y disponibilidad de demostración. No se confirma disponibilidad real.</p>
+                        <p id="habitaciones-estado" role="status" aria-live="polite">Comprobá disponibilidad para ver las habitaciones de tu estadía.</p>
+                        <a href="#reservar" class="room-continue">Consultar fechas y huéspedes</a>
+                        <button type="button" id="habitaciones-reintentar" class="btn-api-retry" hidden>Reintentar habitaciones</button>
+                        <div id="habitaciones-lista" class="room-list"></div>
+                        <a id="habitaciones-continuar" class="room-continue" href="#reservar" hidden>Continuar con la habitación seleccionada</a>
+                    </section>
+
+                    <article class="detail-panel">
+                        <span class="section-kicker">Ubicación y entorno</span>
+                        <h2>Conocé la zona antes de reservar</h2>
+                        <p class="detail-disclaimer">La información de esta sección es demostrativa y orientativa. Para decisiones reales conviene consultar fuentes oficiales y al alojamiento.</p>
+
+                        <div class="area-info-grid">
+                            <div class="area-info-card">
+                                <div class="area-info-icon">⌖</div>
+                                <div>
+                                    <h3>Zona</h3>
+                                    <p id="detalle-zona"></p>
+                                </div>
+                            </div>
+
+                            <div class="area-info-card">
+                                <div class="area-info-icon">✓</div>
+                                <div>
+                                    <h3>Seguridad y recomendaciones</h3>
+                                    <p id="detalle-seguridad"></p>
+                                </div>
+                            </div>
+
+                            <div class="area-info-card">
+                                <div class="area-info-icon">↔</div>
+                                <div>
+                                    <h3>Movilidad</h3>
+                                    <p id="detalle-movilidad"></p>
+                                </div>
+                            </div>
+
+                            <div class="area-info-card">
+                                <div class="area-info-icon">◎</div>
+                                <div>
+                                    <h3>Entorno</h3>
+                                    <p id="detalle-entorno"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <aside id="reservar" class="booking-card">
+                    <div class="booking-card-top">
+                        <span>Reservar estadía</span>
+                        <strong id="reserva-hotel-nombre-lateral">Alojamiento</strong>
+                    </div>
+
+                    <form id="form-estadia" class="booking-form">
+                        <div class="booking-date-grid">
+                            <div class="booking-field">
+                                <label for="reserva-checkin">Entrada</label>
+                                <input id="reserva-checkin" type="date" required>
+                            </div>
+                            <div class="booking-field">
+                                <label for="reserva-checkout">Salida</label>
+                                <input id="reserva-checkout" type="date" required>
+                            </div>
+                        </div>
+
+                        <div class="booking-field">
+                            <label for="reserva-adultos">Adultos</label>
+                            <select id="reserva-adultos" required>
+                                <option value="1">1 adulto</option>
+                                <option value="2" selected>2 adultos</option>
+                                <option value="3">3 adultos</option>
+                                <option value="4">4 adultos</option>
+                                <option value="5">5 adultos</option>
+                                <option value="6">6 adultos</option>
+                            </select>
+                        </div>
+
+                        <div class="booking-date-grid">
+                            <div class="booking-field">
+                                <label for="reserva-ninos">Niños</label>
+                                <select id="reserva-ninos">
+                                    <option value="0" selected>0 niños</option>
+                                    <option value="1">1 niño</option>
+                                    <option value="2">2 niños</option>
+                                    <option value="3">3 niños</option>
+                                    <option value="4">4 niños</option>
+                                </select>
+                            </div>
+                            <div class="booking-field">
+                                <label for="reserva-habitaciones">Habitaciones</label>
+                                <select id="reserva-habitaciones">
+                                    <option value="1" selected>1 habitación</option>
+                                    <option value="2">2 habitaciones</option>
+                                    <option value="3">3 habitaciones</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="button" id="btn-comprobar-disponibilidad" class="btn-check-availability" aria-controls="disponibilidad-resultado habitaciones-lista">Comprobar disponibilidad</button>
+                        <p id="disponibilidad-resultado" class="availability-result" data-estado="pendiente" role="status" aria-live="polite">Comprobá disponibilidad para tus fechas y huéspedes.</p>
+
+                        <div class="booking-summary">
+                            <div><span>Habitación</span><strong id="resumen-habitacion">Sin seleccionar</strong></div>
+                            <div><span>Tarifa por noche</span><strong id="resumen-tarifa">—</strong></div>
+                            <div><span>Estadía</span><strong id="resumen-noches">—</strong></div>
+                            <div><span>Personas</span><strong id="resumen-huespedes">—</strong></div>
+                            <div class="booking-summary-total"><span>Total estimado</span><strong id="resumen-total">—</strong></div>
+                        </div>
+                        <p id="habitacion-seleccion-mensaje" class="booking-small-note" role="status" aria-live="polite">Seleccioná una habitación para continuar.</p>
+
+                        <div class="booking-account-note">
+                            <strong>Cuenta obligatoria</strong>
+                            <p>Para confirmar la reserva necesitás iniciar sesión o crear una cuenta.</p>
+                        </div>
+
+                        <div id="mensaje-estadia" class="booking-message hidden" aria-live="polite"></div>
+
+                        <button type="submit" class="btn-book-now" id="btn-reservar-estadia" disabled>Reservar ahora</button>
+                        <p class="booking-small-note">No se realiza ningún cobro real en este prototipo.</p>
+                    </form>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 PosadasTurismo</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "client": "Windows",
+  "app_limits_source": "compose.yml",
+  "host_ram_bytes": 8300388352,
+  "runtime": "Linux/WSL2",
+  "processor": "12th Gen Intel(R) Core(TM) i5-12450HX",
+  "docker_cpus": 12,
+  "docker_memory_bytes": 3962322944,
+  "docker_engine": "29.9.3"
+}
